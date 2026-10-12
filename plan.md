@@ -10,28 +10,27 @@ Etudiants peu politisés
 
 # Trame proposée
 
-## 0. Accroche (5 min)
+Détail : `slides.md` (ce qui est projeté), `oral.md` (ce qu'on dit), `sources.md` (les sources).
 
-Question aux étudiants : "est-ce que ça vous est déjà arrivé de trouver les résultats d'un algorithme non pertinents voire injustes ?" 
+## 0. Accroche (10 min)
 
-Ils parlent de leurs exemples éventuels, puis on leur cite les 2 ci-dessus :
+Exercice aux étudiants : "Vous êtes data scientist à la CNAF, 13,8 millions de foyers allocataires, ~700 contrôleurs : quels dossiers contrôler pour récupérer le plus d'argent versé à tort ?" 
 
-L'exemple Gender Shades (étude du MIT, 2018, Buolamwini & Gebru) : ils ont testé trois logiciels commerciaux de classification de genre : le taux d'erreur était de 0.8 % pour les hommes à peau claire, contre 34,7 % pour les femmes à peau foncée. Essentiellement un souci de sous-représentation dans le dataset d'entrainement initial. IBM a arrêté son programme de reconnaissance faciale en 2020, notamment suite au shitstorm de cette affaire
+Ils choisissent 5 variables parmi 10, puis on leur révèle que ce modèle existe vraiment et qui il cible : il prédit les trop-perçus (surtout des erreurs), pas la fraude.
 
-2e exemple : l'algorithme utilisé par Amazon pour sélectionner des CV, qui discriminait les femmes (à cause de la sur-représentation d'hommes dans les profils déjà embauchés par l'entreprise) : https://www.numerama.com/tech/426774-amazon-a-du-desactiver-une-ia-qui-discriminait-les-candidatures-de-femmes-a-lembauche.html
+En réserve : l'exemple Gender Shades (étude du MIT, 2018, Buolamwini & Gebru) : ils ont testé trois logiciels commerciaux de classification de genre : le taux d'erreur était de 0.8 % pour les hommes à peau claire, contre 34,7 % pour les femmes à peau foncée. Essentiellement un souci de sous-représentation dans le dataset d'entrainement initial. IBM a arrêté son programme de reconnaissance faciale en 2020, notamment suite au shitstorm de cette affaire
 
 
 ## I. Quelques exemples historiques et d'actu (15 min)
 
-Ca ne date pas d'hier, quelques exemples historiques : 
-- Redlining dans les années 1920 aux USA
-- Quelques exemples sur le pourquoi de la cartographie radicale
-- Autre (j'ai un biais assez carto donc à varier)
-
-Revue de presse plus récente :
-- APB : longue bataille pour accès à l'algo du code source. Après un an de procédure, le code est livré sur papier. "Malicious compliance" : ici ce qui pose souci c'est la question de boite noire venant empêcher l'auditabilité du code
-- CAF : détection fraudes -> [Le monde](https://www.lemonde.fr/les-decodeurs/article/2023/12/04/profilage-et-discriminations-enquete-sur-les-derives-de-l-algorithme-des-caisses-d-allocations-familiales_6203796_4355770.html) ou [Quadrature du net](https://www.laquadrature.net/2022/12/23/notation-des-allocataires-febrile-la-caf-senferme-dans-lopacite/)
-(on le garde si on en parle dans l'atelier ?)
+Ca ne date pas d'hier. On annonce une grille "où ça casse ?" (dans les données, dans le modèle, dans l'usage), puis quelques exemples du plus ancien au plus récent : 
+- Redlining dans les années 1930 aux USA : la prophétie auto-réalisatrice
+- Mannequins de crash-test, années 1970 : le dataset d'entrainement
+- St George's (école de médecine, Londres), 1979 : la reproduction du passé
+- APB, 2016 : longue bataille pour accès à l'algo du code source, le code est livré sur papier. "Malicious compliance" : ici ce qui pose souci c'est la question de boite noire venant empêcher l'auditabilité du code
+- L'algorithme utilisé par Amazon pour sélectionner des CV, qui discriminait les femmes (à cause de la sur-représentation d'hommes dans les profils déjà embauchés par l'entreprise) : https://www.numerama.com/tech/426774-amazon-a-du-desactiver-une-ia-qui-discriminait-les-candidatures-de-femmes-a-lembauche.html
+- Notes des A-levels en Angleterre, 2020 : correlation <> causation, "Fuck the algorithm"
+- CAF : détection fraudes -> [Le monde](https://www.lemonde.fr/les-decodeurs/article/2023/12/04/profilage-et-discriminations-enquete-sur-les-derives-de-l-algorithme-des-caisses-d-allocations-familiales_6203796_4355770.html) ou [Quadrature du net](https://www.laquadrature.net/2022/12/23/notation-des-allocataires-febrile-la-caf-senferme-dans-lopacite/). C'est le cas de l'accroche, il cumule presque tous les mécanismes
 
 
 ## II. Témoignages & QR (30 min : ~15 min chacun)
@@ -72,6 +71,8 @@ Re-division en 3 groupes, choix d'un acteur pour lequel on réfléchit à : "Que
 
 
 ## V. Ouverture optimiste (20 min)
+
+Quelques caveats pour leur métier : le biais du survivant (les avions de 1943), la loi de Goodhart (les rats de Hanoï, 1902), les corrélations fallacieuses (Spurious correlations). Puis retour sur l'algo de la CNAF : qu'est-ce que vous changeriez ?
 
 L'objectif n'est pas de dégouter du métier bien entendu ; il s'agit juste d'essayer de détricoter l'idée de "science ou algo neutre". Chaque algo porte en soit des biais il est important d'en avoir conscience et être capable de les reconnaître et faire évoluer.
 

@@ -17,7 +17,7 @@ Les slides s'ouvrent dans le navigateur et se rechargent à chaque modification 
 ## Générer le HTML
 
 ```bash
-npx reveal-md slides.md --static dist
+npx reveal-md slides.md --static dist --static-dirs=pictures
 ```
 
-Le site statique est écrit dans `dist/`.
+Si besoin d'ajouter des images, les mettre dans `/pictures` et intégrer la classe spécifique comme dans les exemples déjà en place.
