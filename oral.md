@@ -1,136 +1,130 @@
 # Notes pour l'oral
 
-Ce qu'on dit, dans l'ordre des slides. Les sources sont dans `sources.md`, classées par titre. Les `[à compléter]` sont à remplir par Quentin et Elise.
+## 1. La CAF (10 min)
 
-## 0. Le piège (10 min)
-
-### Consigne (2 min)
+### Pour commencer / Choisissez 5 variables (5 min)
 
 "Vous êtes data scientist à la CNAF. Chaque mois, 13,8 millions de foyers reçoivent une prestation. Vous avez environ 700 contrôleurs pour les contrôles sur place (chiffre de presse, à recouper). Votre mission : choisir les dossiers à contrôler pour récupérer le plus possible d'argent versé à tort."
 
-Ne pas prononcer les mots biais, discrimination, éthique.
-
-### En binômes (4 min)
-
-Ils choisissent 5 variables parmi les 10 affichées. On note au tableau les plus citées.
-
-A observer : presque tout le monde refuse la nationalité, beaucoup acceptent le code postal.
-
-### Révélation (4 min)
+### Ce modèle existe vraiment
 
 - Le score existe depuis le début des années 2010. Il note chaque foyer entre 0 et 1, chaque mois : plus de 13 millions de scores, portant sur 32 millions de personnes.
 - Quelques dizaines de variables, retenues après un apprentissage sur plus de 1 000 informations par allocataire.
 - La Quadrature du Net a obtenu le code source des versions 2010-2018. Ce qui fait monter le score : faibles revenus, chômage, RSA, handicap (AAH, surtout avec un emploi), parent isolé (des femmes dans 80 % des cas), quartier défavorisé.
-- L'exemple à détailler, l'AAH (allocation aux adultes handicapés) : sans emploi, l'allocataire déclare ses ressources une fois par an et son allocation est stable. Avec un emploi en milieu ordinaire, il passe à une déclaration tous les trois mois ("AAH trimestrialisée") et l'allocation est recalculée à chaque fois. Plus de déclarations et des revenus qui bougent, donc plus d'erreurs, donc plus de trop-perçus dans les données passées, donc un score élevé. La personne handicapée qui travaille est davantage contrôlée parce que sa règle est plus compliquée, pas parce qu'elle triche. (Détail du régime trimestriel à recouper ; l'AAH aurait été retirée du modèle 2026 d'après la presse, non confirmé par la page de la CAF.)
+- L'exemple de l'AAH (allocation aux adultes handicapés) : sans emploi, l'allocataire déclare ses ressources une fois par an et son allocation est stable. Avec un emploi en milieu ordinaire, il passe à une déclaration tous les trois mois ("AAH trimestrialisée") et l'allocation est recalculée à chaque fois. Plus de déclarations et des revenus qui bougent, donc plus d'erreurs, donc plus de trop-perçus dans les données passées, donc un score élevé. La personne handicapée qui travaille est davantage contrôlée parce que sa règle est plus compliquée.
+
+### Fraude ou erreur ?
+
 - Le point clé : le modèle ne prédit pas la fraude mais le risque d'indu, c'est-à-dire de trop-perçu, qui est le plus souvent une erreur. Or on se trompe là où les règles sont compliquées : minima sociaux, déclarations trimestrielles, revenus qui bougent. Le score mesure la complexité des règles imposées aux plus précaires, pas leur malhonnêteté.
-- La réponse de la CAF, à donner honnêtement : l'algorithme ne cible "pas forcément les personnes les plus pauvres, mais celles dont les revenus varient" (N. Grivel, directeur de la CNAF). Et le datamining ne représente que 6,5 % des contrôles sur place ou sur pièces selon la CAF.
-- Nationalité contre code postal : vous avez refusé l'une et pris l'autre, alors que le code postal porte en partie la même information. C'est ce qu'on appelle un proxy.
+- Pourquoi "il mesure surtout l'exposition à des règles complexes" :
+  - Ordres de grandeur : selon la Cour des comptes, 8 % des prestations versées en 2024 sont entachées d'erreurs, soit 6,3 milliards d'euros. La fraude détectée la même année : 449 millions.
+  - Ces erreurs vont dans les deux sens : la Cour compte aussi des sommes dues jamais versées. Une fraude ne joue que dans un sens, une règle trop compliquée produit des erreurs dans les deux.
+  - Elles sont concentrées là où les règles sont compliquées. D'après le directeur de la CNAF devant les parlementaires, 96 % des erreurs relevées par la Cour portent sur le RSA et les aides au logement, et 83 % viennent des déclarations : pour moitié inexactes dès le départ, pour moitié devenues inexactes à cause du décalage entre déclaration et calcul de la prestation. Ce décalage est de la pure mécanique de règle. Un quart des montants de la prime d'activité, elle aussi déclarée tous les trois mois, est entaché d'erreurs.
+  - Le même allocataire change de score en changeant de régime de déclaration : c'est l'exemple de l'AAH ci-dessous.
+  - L'Etat a reconnu le problème : le Défenseur des droits dénonçait en 2017 des sanctions contre des allocataires "de bonne foi mais mal informés", la loi du 10 août 2018 crée un droit à l'erreur, et la "solidarité à la source" préremplit les déclarations depuis 2025 pour réduire les erreurs.
+  - Le score mêle aussi de la fraude. En 2019, les fraudes détectées se répartissaient en omissions et fausses déclarations (69 %), fausses déclarations d'isolement (18 %) et faux ou escroqueries (12,5 %) ; le critère "parent isolé" est donc en partie lié à la vie de couple dissimulée. Une même omission de ressources peut être une erreur ou une fraude, seule l'intention les distingue, et les données ne l'enregistrent jamais.
 
-Ton : "vous avez fait ce que ferait tout bon ingénieur, et c'est bien le problème". Pas "vous vous êtes fait avoir".
+- Point important : nationalité contre code postal : vous avez refusé l'une et pris l'autre, alors que le code postal porte en partie la même information. C'est ce qu'on appelle un proxy.
 
-Si certains ne tombent pas dedans : leur demander pourquoi, ils font l'argumentaire à notre place.
+Le travail d'ingénieur ne peut pas se limiter à chercher à optimiser un algo on voit qu'il faut réfléchir avec la complexité métier.
 
-### Si on nous demande "c'était quoi, la bonne réponse ?"
+## 2. Ça ne date pas d'hier (15 min)
 
-Réponse courte, pour ne pas éventer la suite : "Il n'y a pas de bonne liste de variables. La bonne réponse commence par se demander ce qu'on prédit vraiment et ce qu'on fait du score. On construit ça ensemble jusqu'à la fin." La réponse complète est en conclusion.
+### Qu'est-ce qui pose problème et pourquoi ?
 
-## I. Ça ne date pas d'hier (15 min)
+Ce mécanisme n'a pas attendu le machine learning. Neuf exemples, du plus ancien au plus récent.
 
-Transition : "Ce mécanisme n'a pas attendu le machine learning." Sept exemples, du plus ancien au plus récent, à filtrer selon le temps.
+Un système de décision est calibré sur des données du passé, donc il reproduit les discriminations du passé, avec en prime un vernis de neutralité.
 
-Fil rouge à énoncer une fois : un système de décision est calibré sur des données du passé, donc il reproduit les discriminations du passé, avec en prime un vernis de neutralité.
+### 1935 : redlining (origine / quartier)
 
-### La grille de lecture : trois endroits où ça casse
+Mécanisme de prophétie auto-réalisatrice. 
 
-A annoncer avant les exemples (slide "Où ça casse ?"), puis à nommer explicitement à chaque exemple, avec les mêmes mots que sur les slides. Chaque exemple a un mécanisme principal ; la plupart en illustrent aussi un ou deux autres.
-
-| Où | Mécanisme | En une phrase | Exemple principal | Aussi dans |
-|---|---|---|---|---|
-| Données | La reproduction du passé | le modèle apprend des décisions humaines, biais compris | St George's | Amazon, CAF |
-| Données | Le dataset d'entraînement | ceux qui sont absents ou sous-représentés dans les données n'existent pas pour le modèle | Crash-tests, Amazon | Gender Shades |
-| Données | Les survivants | on ne voit que ceux qui ont passé le filtre | avions de 1943 (caveats) | CAF |
-| Modèle | Correlation <> causation | une variable "marche" pour prédire, on agit comme si elle décrivait la personne | A-levels | Amazon, CAF, redlining |
-| Modèle | La loi de Goodhart | le modèle optimise très bien le critère qu'on lui donne, pas l'intention derrière | rats de Hanoï (caveats) | A-levels, CAF |
-| Usage | La prophétie auto-réalisatrice | la décision fabrique les données qui la confirmeront | Redlining | CAF |
-| Usage | La boîte noire | sans accès au code, rien de ce qui précède n'est détectable | APB | CAF avant 2023 |
-
-Deux précisions utiles pour des matheux :
-
-- Corrélation contre causalité : pour prédire, une corrélation suffit, et c'est pour ça que le modèle "marche". Le problème commence quand on décide : contrôler, refuser, noter quelqu'un, c'est traiter la corrélation comme une propriété de la personne. Prédire n'est pas décider.
-- Aucun de ces mécanismes n'est une erreur de calcul. Et même en les corrigeant tous, il reste un choix de valeurs entre définitions de l'équité : c'est l'objet de l'atelier. Ne pas laisser croire qu'il "suffit de faire de la bonne stat".
-
-### 1. Redlining, USA, années 1930 (origine / quartier)
-
-Mécanisme : la prophétie auto-réalisatrice (usage). Aussi : correlation <> causation, le quartier servant de proxy de l'origine.
+Aussi : correlation <> causation, le quartier servant de proxy de l'origine.
 
 - 1935-1940 : l'agence fédérale HOLC fait cartographier 239 villes en 4 classes de risque de crédit, de A ("best") à D ("hazardous", en rouge). La composition raciale du quartier pèse lourd dans la note.
 - La boucle : pas de prêt, donc pas d'investissement, donc le quartier se dégrade, donc la carte "avait raison". La prédiction fabrique ses propres données.
-- Interdit en 1968 (Fair Housing Act), mais les effets restent dans les données. En 2016, la livraison Amazon Prime en un jour exclut des quartiers majoritairement noirs dans plusieurs villes, dont Roxbury à Boston, sans que l'origine soit une variable.
-- Contrepoint cartographie radicale : W. Bunge et la Detroit Geographical Expedition (1968-71) font cartographier la ville par ses habitants. Qui choisit ce qu'on mesure choisit ce qu'on voit.
+- Interdit en 1968 (Fair Housing Act) donc après une trentaine d'années, mais les effets restent dans les données. Par exemple en 2016, la livraison Amazon Prime en un jour exclut des quartiers majoritairement noirs dans plusieurs villes, dont Roxbury à Boston, sans que l'origine soit une variable.
 
-### 2. Mannequins de crash-test, années 1970 (sexe)
+### Années 1970 : crash-tests (sexe)
 
-Mécanisme : le dataset d'entraînement (données).
+Mécanisme : le dataset d'entraînement.
 
 - Les tests reposent historiquement sur un mannequin d'homme "moyen", mis au point dans les années 1970.
-- Sur les accidents réels aux USA entre 1998 et 2008, une conductrice ceinturée a un odds de blessure grave supérieur de 47 % à celui d'un conducteur dans un accident comparable (IC 95 % : 28-70 %). Attention : c'est un rapport de cotes, pas "47 % de risque en plus".
-- Parlant pour une filière modélisation / simulation : ici le "dataset", c'est le modèle physique lui-même.
+- Sur les accidents réels aux USA entre 1998 et 2008, une conductrice ceinturée a un risque de blessure grave supérieur de 47 % à celui d'un conducteur dans un accident comparable
+- Ici ce qui fait office de "dataset", c'est le modèle physique utilisé au départ lui même lui-même.
 
-### 3. St George's Hospital Medical School, Londres, 1979-1988 (sexe + origine)
+A noter que cela se retrouve en pharma, exemple : Le somnifère zolpidem :en janvier 2013, l’agence américaine du médicament (FDA) a divisé par deux la dose recommandée pour les femmes, de 10 mg à 5 mg. Elles éliminent la molécule plus lentement, ce qui laissait un effet résiduel le lendemain matin, notamment au volant. C’était 20 ans après sa mise sur le marché.
 
-Mécanisme : la reproduction du passé (données). C'est le cas le plus pur de biais humain intégré à l'algorithme.
+### 1979 : St George's, Londres (sexe + origine)
+
+Mécanisme : la reproduction du passé. C'est le cas le plus pur de biais humain intégré à l'algorithme.
 
 - Un enseignant écrit un programme pour présélectionner les candidatures. En 1979, il reproduit les notes du jury avec 90-95 % de corrélation. En 1982, toute la présélection est faite par ordinateur.
 - Il retire des points aux femmes et aux noms à consonance non européenne, comme le jury le faisait. Jusqu'à 60 candidats sur 2 000 écartés chaque année pour ce seul motif.
 - Décembre 1986 : deux enseignants de l'école, A. Burke et J. Collier, alertent la Commission for Racial Equality, qui conclut en 1988 à une discrimination.
-- La phrase à citer, du BMJ en 1988 : "the prejudice of a computer is no less than that of its designers".
-- Probablement le premier cas documenté de "on reproduit les biais du dataset d'entraînement". Même point de départ que l'outil de tri de CV d'Amazon (exemple 5), quarante ans plus tôt.
+- La phrase à citer, du British Medical Journal en 1988 : "the prejudice of a computer is no less than that of its designers".
+- Probablement le premier cas documenté de "on reproduit les biais du dataset d'entraînement". Même point de départ que l'outil de tri de CV d'Amazon (exemple 5), 40 ans plus tôt.
 
-### 4. APB, France, 2016 (opacité)
+### 2016 : APB (opacité)
 
-Mécanisme : la boîte noire (usage). Seul exemple où le problème n'est pas un biais mais l'impossibilité de le chercher.
+Mécanisme : la boîte noire. Seul exemple où le problème n'est pas un biais mais l'impossibilité de le chercher.
 
 - L'association Droits des lycéens demande le code source en mars 2016. Après avis favorable de la CADA, le ministère envoie en octobre une vingtaine de pages imprimées, limitées au tirage au sort des licences en tension.
 - "Malicious compliance" : ce qui pose souci ici, c'est la boîte noire qui empêche l'auditabilité. Sans audit possible, aucun des biais précédents ne peut être détecté.
 
-### 5. Amazon et le tri de CV, 2014-2018 (sexe)
+### 2018 : Amazon et les CV (sexe)
 
-Mécanisme : le dataset d'entraînement (données), les embauches passées étant surtout masculines. Aussi : correlation <> causation, par le mot "women's".
+Mécanisme : le dataset d'entraînement, les embauches passées étant surtout masculines. 
 
 - A partir de 2014, Amazon développe un outil qui note les CV de 1 à 5 étoiles. Il est entraîné sur dix ans de candidatures reçues par l'entreprise, très majoritairement masculines pour les postes techniques.
-- Le genre n'est pas une variable. Mais le modèle apprend à pénaliser les CV contenant le mot "women's" (par exemple "women's chess club captain") et les diplômées de deux universités féminines. C'est un proxy : le mot est corrélé aux embauches passées, il ne dit rien de la compétence.
+- Le genre n'est pas une variable. Mais le modèle apprend à pénaliser les CV contenant le mot "women's" (par exemple "women's chess club captain") et les diplômées de deux universités féminines.
+- C'est un proxy : le mot est corrélé aux embauches passées, il ne dit rien de la compétence.
 - Les ingénieurs neutralisent ces termes, sans pouvoir garantir que le modèle n'en trouvera pas d'autres. Le projet est abandonné, l'affaire est révélée par Reuters en octobre 2018.
-- A dire : retirer la variable sensible ne suffit pas, c'est exactement ce que la salle a fait avec la nationalité et le code postal dans le piège.
+- Retirer la variable sensible ne suffit pas, c'est exactement ce que la salle a fait avec la nationalité et le code postal dans le piège.
 
-### 6. Notes des A-levels, Angleterre, 2020 (classe sociale)
+### 2020 : A-levels (classe sociale)
 
-Mécanisme : correlation <> causation (modèle). Passé en Angleterre en 2020, pendant Covid
+Mécanisme : correlation <> causation (modèle). 
 
-L'objectif était d'éviter l'inflation des notes, donc de conserver la distribution nationale des années précédentes : le modèle y parvient très bien, au prix de l'injustice individuelle. Aussi : la reproduction du passé, par l'historique du lycée.
-
-- Examens annulés pour cause de Covid, l'algorithme d'Ofqual ajuste les notes des professeurs selon l'historique de résultats de chaque lycée.
-- 39,1 % des notes sont abaissées d'au moins un cran, les baisses les plus fortes touchant les milieux les plus défavorisés. Les très petits effectifs, plus fréquents dans le privé, échappent à l'ajustement.
+- En Angleterre en 2020, les examens sont annulés pour cause de Covid, l'algorithme d'Ofqual ajuste les notes des professeurs selon l'historique de résultats de chaque lycée (objectif rester sur la même courbe de ditribution que les années précédentes)
+- 40% environ des notes sont abaissées d'au moins un cran, les baisses les plus fortes touchant les milieux les plus défavorisés. Les très petits effectifs, plus fréquents dans le privé, échappent à l'ajustement.
 - Un bon élève d'un "mauvais" lycée hérite des notes de ses prédécesseurs. Manifestations "Fuck the algorithm", retrait le 17 août, 4 jours après les résultats.
-- Public concerné : des gens de l'âge des étudiants.
 
-### 7. CAF, France, 2010-2026 (précarité, handicap, parents isolés) : la boucle se referme
+### 2024 : des modèles de langage trient les CV (origine, sexe)
 
-Mécanisme : presque tous. C'est la synthèse (slides "En résumé" puis "Et la CAF ?").
+Mécanisme : le dataset d'entraînement. C'est Amazon en 2018, mais avec des modèles généralistes que n'importe quelle entreprise peut brancher sur son logiciel de recrutement (ATS).
 
-- C'est le cas du piège, on y revient pour le relier aux autres. Elle cumule cinq mécanismes sur sept :
-  - reproduction du passé : le score est appris sur les résultats des contrôles passés ;
-  - correlation <> causation : la précarité va avec les erreurs, la cause est la complexité des règles ;
-  - loi de Goodhart : l'indicateur suivi est l'argent récupéré, pas les erreurs dans les deux sens ;
-  - prophétie auto-réalisatrice : voir ci-dessous ;
-  - boîte noire : code inaccessible jusqu'à l'action de La Quadrature du Net en 2023, publié par la CAF en 2026.
+- Kyra Wilson et Aylin Caliskan (Université de Washington) prennent plus de 500 CV et 500 offres d'emploi réels, sur neuf métiers. Seul le prénom change : 120 prénoms associés à des hommes, des femmes, des personnes noires ou blanches. Plus de 3 millions de comparaisons.
+- Les prénoms associés aux personnes blanches sont préférés dans 85 % des cas, les prénoms féminins dans 11 % seulement. Les hommes noirs sont désavantagés dans jusqu'à 100 % des cas.
+- Précision honnête : les modèles testés sont des modèles d'embedding pas des chatbots à proprement parler
+- Personne n'a entraîné ces modèles à recruter. Ils ont appris sur tout le web, avec ses associations entre prénoms, métiers et compétences, et les ressortent dans un usage pour lequel ils n'ont pas été conçus.
+
+### 2024-2026 : l'IA générative, aux dernières nouvelles tout va bien
+
+- Racisme caché, *Nature*, septembre 2024 (Hofmann, Kalluri, Jurafsky, King). On soumet aux modèles le même contenu en anglais standard ou en anglais afro-américain. Pour le second, ils proposent des emplois moins prestigieux, condamnent plus souvent et proposent plus souvent la peine de mort. Interrogés directement sur les Afro-Américains, les mêmes modèles répondent de façon positive : l'alignement masque le biais sans le faire disparaître.
+- Salaire, THWS (Würzburg-Schweinfurt), juillet 2025. Cinq chatbots grand public, des profils identiques sauf le genre, et la question "quel salaire demander ?". L'exemple qui a circulé : 400 000 dollars conseillés à un homme, 280 000 à une femme, pour un poste médical à Denver.
+- Santé, LSE, août 2025. Des outils d'IA utilisés par plus de la moitié des collectivités anglaises résument les dossiers d'aide sociale. Sur 617 dossiers réels où seul le genre change (29 616 paires de résumés), le modèle Gemma de Google emploie plus souvent "handicapé", "incapable" ou "complexe" pour les hommes, et omet ou atténue des besoins équivalents chez les femmes. Llama 3 ne montre pas d'écart : le biais dépend du modèle. Google précise que c'était la première génération de Gemma.
+- Assistants, Université de Limerick, relayé par Euronews en octobre 2026. 189 participants travaillent en réalité virtuelle avec deux avatars, Johan et Johanna, qui utilisent le même modèle (GPT-4). Payés en argent réel, ils donnent environ 10 % de moins à Johanna, tout en affirmant en entretien qu'ils ne feraient aucune différence. Ici ce n'est pas l'IA qui discrimine, ce sont ses utilisateurs ; le titre d'Euronews ("payés") est trompeur, il s'agit d'une somme versée dans une expérience.
+- Point important : ces modèles n'ont été entraînés ni à recruter, ni à conseiller des salaires, ni à résumer des dossiers sociaux. Ils ont appris sur le web et ressortent ses associations dans des usages pour lesquels ils n'ont pas été conçus.
+
+### En résumé
+
+### Et la CAF ? (précarité, handicap, parents isolés) : la boucle se referme
+
+Mécanisme : presque tous.
+
+
+- reproduction du passé : le score est appris sur les résultats des contrôles passés ;
+- correlation <> causation : la précarité va avec les erreurs, la cause est la complexité des règles ;
+- loi de Goodhart : l'indicateur suivi est l'argent récupéré, pas les erreurs dans les deux sens ;
+- prophétie auto-réalisatrice : voir ci-dessous ;
+- boîte noire : code inaccessible jusqu'à l'action de La Quadrature du Net en 2023, publié par la CAF en 2026.
 - Le score est calibré sur les résultats des contrôles passés. Plus de contrôles sur certains profils, donc plus d'indus trouvés chez eux, donc le modèle est "confirmé". Même boucle que le redlining, 90 ans plus tard.
-- Précédent aux Pays-Bas (toeslagenaffaire) : le fisc utilise la nationalité comme facteur de risque de fraude aux allocations de garde d'enfants. Des dizaines de milliers de familles accusées à tort, démission du gouvernement en janvier 2021.
 
-## II. Nos expériences (35 min)
+## 3. Comment cela se retrouve dans nos expériences (35 min)
 
-Principe : raconter jusqu'au point de décision, s'arrêter, faire se positionner la salle, donner la parole à deux ou trois personnes, puis raconter la suite.
-
-### Elise (~15 min)
+### Élise (~15 min)
 
 - Travail dans une PME (domaine smart city) sur un projet d'optimisation du positionnement de bennes de tri sélectif dans une ville.
 - Explication des différentes phases du projet : récolte des données, préparation, stratégie d'analyse, clustering, modèle prédictif, carte de chaleur pour identifier des lieux où déplacer des bennes, expérimentation, rapport
@@ -146,69 +140,11 @@ Principe : raconter jusqu'au point de décision, s'arrêter, faire se positionne
 3. Organisme public : maximiser l'impact. "on vous demande un indicateur d'impact unique pour piloter l'équipe"
    - Loi de Goodhart
 
-## III. Atelier (1h)
+## 4. Atelier (1h)
 
-A valider ensemble : la slide "Atelier" est encore à écrire, ce qui suit est une proposition.
+A voir ensemble 
 
-### Temps 1 : l'équité impossible (25 min)
-
-Données fictives, construites pour l'exercice. Deux groupes de 1 000 allocataires : A (revenus stables) et B (revenus instables). Le score les range en trois classes. Le score est calibré : dans une classe donnée, le taux d'indu est le même pour A et pour B.
-
-| Classe de score | Taux d'indu | Groupe A | dont indus | Groupe B | dont indus |
-|---|---|---|---|---|---|
-| Faible | 10 % | 700 | 70 | 300 | 30 |
-| Moyen | 40 % | 200 | 80 | 400 | 160 |
-| Elevé | 80 % | 100 | 80 | 300 | 240 |
-| Total | | 1 000 | 230 | 1 000 | 430 |
-
-Budget : 400 contrôles. Trois équipes, une règle chacune (10 min de calcul) :
-
-- Equipe 1, même seuil pour tous : à score égal, traitement égal.
-- Equipe 2, parité : autant de contrôles dans A que dans B.
-- Equipe 3, erreurs égales : un allocataire sans indu doit avoir la même probabilité d'être contrôlé, qu'il soit A ou B.
-
-Corrigé :
-
-| Règle | Contrôles A / B | Indus trouvés | Honnêtes contrôlés, A | Honnêtes contrôlés, B |
-|---|---|---|---|---|
-| 1. Même seuil | 100 / 300 | 320 | 20 sur 770, soit 2,6 % | 60 sur 570, soit 10,5 % |
-| 2. Parité | 200 / 200 | 280 | 80 sur 770, soit 10,4 % | 40 sur 570, soit 7,0 % |
-| 3. Erreurs égales | 170 / 230 | 292 | 62 sur 770, soit 8,1 % | 46 sur 570, soit 8,1 % |
-
-Détail des règles 2 et 3 : en A, on contrôle les 100 "élevé" puis 100 "moyen" (règle 2) ou 70 "moyen" (règle 3) ; en B, 200 ou 230 "élevé".
-
-Restitution (10 min), ce qu'il faut faire sortir :
-
-- Règle 1 : la plus "rentable", mais un allocataire B sans indu est contrôlé 4 fois plus souvent qu'un A sans indu.
-- Règles 2 et 3 : un A classé "moyen" est contrôlé alors qu'un B classé "élevé" ne l'est pas. A score égal, traitement inégal.
-- Aucune règle ne satisfait les trois critères. Ce n'est pas un défaut de ce tableau : c'est un théorème dès que les taux de base diffèrent (Kleinberg, Mullainathan et Raghavan ; Chouldechova, 2016). Il a été formulé à la suite de la controverse COMPAS (voir les exemples en réserve).
-- Et le tableau suppose que le score est juste, alors qu'il est appris sur des contrôles passés déjà ciblés.
-
-Conclusion du temps 1 : "équitable" n'est pas un réglage technique. Quelqu'un doit choisir. Qui ?
-
-### Temps 2 : comité de pilotage (35 min)
-
-Mise en situation (5 min) : la CNAF réunit un comité pour décider du sort de son score. Trois issues possibles : on déploie tel quel, on modifie, on arrête.
-
-Cinq rôles, une fiche chacun (à écrire) :
-
-- Direction de la CNAF : objectifs de recouvrement fixés par l'Etat, image publique
-- Data scientist : a construit le modèle, connaît ses limites
-- Association d'allocataires : vit les contrôles
-- Contrôleur ou contrôleuse : reçoit la liste des dossiers, va au domicile
-- Défenseur des droits : garant de la non-discrimination
-
-Déroulé : 5 min de préparation par rôle, 15 min de comité, 10 min de débrief.
-
-Débrief : placer les cinq acteurs sur deux axes, influence sur l'algorithme et impact subi. Qui a parlé le plus ? Qui a décidé ? Les plus impactés sont rarement les plus influents. Puis la question de l'ancienne trame : comment donner du poids à ceux qui n'en ont pas ?
-
-Ce qui s'est passé en vrai, à raconter après le débrief :
-
-- 2022-2023 : La Quadrature du Net obtient le code des anciennes versions, Le Monde et Lighthouse Reports enquêtent.
-- Octobre 2024 : 15 associations, dont Amnesty, saisissent le Conseil d'Etat. Issue non vérifiée à ce jour, à recouper avant la conférence.
-- Janvier 2026 : la CAF met en service un nouveau modèle (DMDE 2026), publie son code source, et annonce avoir retiré nationalité, genre, adresse et données de comportement. Les associations saluent la publication mais maintiennent leur recours, d'après la presse.
-
-## IV. Débat mouvant (20 min)
+## 5. Débat mouvant (20 min)
 
 Chacun se positionne à gauche (d'accord) ou à droite (pas d'accord) de la salle, puis certains expliquent leur positionnement.
 
@@ -216,11 +152,11 @@ Chacun se positionne à gauche (d'accord) ou à droite (pas d'accord) de la sall
 - Affirmation 2 : "Les algorithmes utilisés dans des domaines critiques (santé, justice, finance) doivent être open source pour permettre leur audit."
 - Affirmation 3 : `[à compléter]`
 
-## V. Et pour finir : caveats pour votre métier (10 min)
+## 6. Et pour finir, quelques exemples (10 min)
 
-Transition après le débat : "Trois réflexes qui valent bien au-delà des algorithmes publics, quel que soit votre futur poste." Ce sont les versions générales de trois mécanismes vus en partie I.
+Transition après le débat : "Quatre réflexes qui valent bien au-delà des algorithmes publics, quel que soit votre futur poste." Ce sont les versions générales de trois mécanismes vus en partie I.
 
-### 1. Les données que vous n'avez pas : le biais du survivant (1943)
+### 1943 : les avions qui reviennent
 
 C'est "les survivants" de la grille. Beaucoup la connaissent déjà : poser la question et laisser la salle répondre.
 
@@ -229,7 +165,7 @@ C'est "les survivants" de la grille. Beaucoup la connaissent déjà : poser la q
 - Honnêteté : le schéma de l'avion criblé de points rouges qu'on voit partout est une illustration moderne sur des données hypothétiques, pas un document de Wald. Son mémoire de 1943 est réel, l'anecdote a été embellie depuis.
 - A retenir : dans un jeu de données, ceux qui manquent ne manquent pas au hasard. Les femmes dans les crash-tests. A la CAF : on ne connaît les trop-perçus que des dossiers qu'on a contrôlés, et ceux qui ne demandent pas leurs droits n'apparaissent nulle part.
 
-### 2. L'indicateur qu'on vous demande d'optimiser : la loi de Goodhart
+### 1902 : les rats de Hanoï
 
 C'est "la loi de Goodhart" de la grille.
 
@@ -239,17 +175,29 @@ C'est "la loi de Goodhart" de la grille.
 - La loi elle-même vient d'ailleurs : Charles Goodhart, économiste à la Banque d'Angleterre, 1975, à propos des objectifs de masse monétaire. Dès qu'on pilote sur un indicateur, sa relation avec ce qu'on voulait mesurer se défait. La formule "quand une mesure devient une cible, elle cesse d'être une bonne mesure" est de l'anthropologue Marilyn Strathern (1997). Les cobras et les rats illustrent des incitations perverses, ils ne sont pas à l'origine de la loi.
 - Lien avec la séance : le témoignage de Quentin sur la mesure d'impact, les A-levels, et tout modèle de machine learning, qui optimise la métrique qu'on lui donne et pas l'intention derrière.
 
-### 3. La corrélation qui tombe trop bien : spurious correlations
+### 201x : Internet
 
 C'est "correlation <> causation" de la grille.
 
 - Le site de Tyler Vigen, tylervigen.com/spurious-correlations, aligne des séries sans aucun rapport et très fortement corrélées. Exemple de la slide : la popularité du prénom Margarita et les vols de voitures dans l'Indiana (r = 0,96). Autre classique : les films avec Nicolas Cage et les noyades en piscine.
 - Ouvrir le site en direct et en montrer deux ou trois.
+- La citation de la slide, "si on torture les données assez longtemps, elles finissent par avouer", est attribuée à l'économiste Ronald Coase (prix Nobel 1991). Il l'aurait dite dans les années 1960 sans jamais la publier ; la première trace écrite est une conférence du statisticien I. J. Good en 1971, qui la lui attribue.
 - A retenir : avec assez de variables, on trouve toujours une corrélation. C'est ce que fait un modèle à qui on donne 1 000 informations par allocataire.
 
-## VI. Et pour finir : conclusion (15 min)
+### 1973 : les admissions de Berkeley
 
-### Retour sur le piège (5 min)
+C'est encore "correlation <> causation" de la grille, sous sa forme la plus piégeuse : une variable cachée (la composition des groupes) inverse la conclusion.
+
+- Berkeley, automne 1973 : 12 763 candidatures en master. 44 % des hommes sont admis, contre 35 % des femmes. L'université craint un procès pour discrimination et demande une étude à des statisticiens.
+- Filière par filière, l'écart disparaît, voire s'inverse : dans les six plus grandes, les femmes ont un taux d'admission égal ou supérieur dans quatre cas. Sur les 85 filières, 4 sont significativement défavorables aux femmes et 6 aux hommes. L'analyse groupée trouve même un léger biais en faveur des femmes.
+- Explication : les femmes candidatent surtout aux filières les plus sélectives (lettres par exemple), les hommes à des filières qui admettent beaucoup (ingénierie). Le chiffre global mélange des filières qui n'ont rien à voir.
+- Ce qu'il ne faut pas en conclure : "il n'y avait pas de discrimination". La question se déplace. Pourquoi les femmes visaient-elles des filières plus encombrées et moins financées ? Les auteurs eux-mêmes renvoyaient à des orientations façonnées en amont, par l'éducation et la socialisation (paraphrase, à vérifier dans l'article).
+- Lien avec la séance : aucun de nos neuf exemples n'est à proprement parler un paradoxe de Simpson. Le plus proche est le tableau de l'atelier : dans chaque classe de score, le taux d'indu est le même pour A et B, mais les taux globaux diffèrent (23 % contre 43 %), uniquement à cause de la répartition dans les classes. Les A-levels en sont un cousin : la distribution nationale est juste, les notes individuelles ne le sont pas.
+- A retenir : avant de conclure sur un chiffre agrégé, se demander par quoi il faudrait le découper.
+
+## 7. Conclusion (15 min)
+
+### Et par rapport à l'algo de la CNAF (5 min)
 
 Réafficher leur liste de variables du début. "Qu'est-ce que vous changeriez ? Les variables, la cible, ou la question posée ?"
 
@@ -272,18 +220,24 @@ Le niveau 3 ne fait pas disparaître le problème : même encadré, le modèle o
 
 ### Quelques questions à vous poser (3 min)
 
-1. Sur quelles données du passé est entraîné mon algo ?
-2. Qui est absent des données ?
-3. Quel critère j'optimise, et qui l'a choisi ?
-4. D'où vient la demande, est-ce que je permets aux parties prenantes de contester / auditer ?
-5. Est-ce que j'ai un regard statistique et citoyen, produit, et pas juste "belle techno" ?
+Une seule slide qui reprend les quatre exemples de fin sous forme de questions (survivants, Goodhart, corrélations fallacieuses, Simpson), plus deux questions générales.
 
-Deux réflexes de métier :
+1. Sur quelles données du passé mon algo est-il entraîné, et qui en est absent ? (reproduction du passé, survivants)
+2. Quel critère j'optimise, et qui l'a choisi ? (Goodhart)
+3. Ce résultat n'est-il pas trop beau pour être vrai ? (spurious correlations)
+4. Le chiffre global tient-il quand je le découpe ? (Simpson)
+5. D'où vient la demande, et les parties prenantes peuvent-elles contester ou auditer ? (boîte noire)
+6. Est-ce que j'ai un regard statistique et citoyen, produit, et pas juste "belle techno" ?
 
-- Commencer par une baseline simple : reproductible, sobre, explicable. On complexifie si le besoin est avéré.
-- Impliquer les parties prenantes au plus tôt. A une époque où coder devient plus simple, c'est le regard produit qui fait la différence.
+### Retour en 1935 : la cartographie radicale (3 min)
 
-### L'optimisme par les faits (5 min, à l'oral, sur la slide "Où et comment agir")
+Slide avant "Où et comment agir". On revient à la première carte de la séance pour montrer que les mêmes outils peuvent servir à l'inverse.
+
+- 1968-1971 : à Detroit, le géographe William Bunge et la Detroit Geographical Expedition font cartographier la ville par ses habitants, dans les quartiers noirs. Ils produisent des cartes que personne d'autre ne faisait, comme celle des enfants noirs renversés par les automobilistes qui traversent leur quartier pour rejoindre les banlieues aisées. Livre : *Fitzgerald: Geography of a Revolution* (1971).
+- 2016 : l'Université de Richmond numérise et publie les cartes de redlining (Mapping Inequality). Les mêmes cartes servent aujourd'hui à mesurer les effets du redlining sur la santé, les températures urbaines ou le patrimoine.
+- A retenir : qui choisit ce qu'on mesure choisit ce qu'on voit. Transition vers "Où et comment agir".
+
+### Où et comment agir (5 min)
 
 L'objectif n'est pas de dégoûter du métier, mais de détricoter l'idée d'algorithme neutre. Dans chaque exemple, quelqu'un de technique a levé le drapeau :
 
@@ -294,10 +248,19 @@ L'objectif n'est pas de dégoûter du métier, mais de détricoter l'idée d'alg
 
 Où agir : Data for Good, Eclaireur Public, Biolit, Pyronear, La Quadrature du Net, le Shift. Importance de ne pas "subir la data".
 
-## Exemples en réserve
+Deux réflexes de métier :
 
-A sortir selon les questions de la salle.
+- Commencer par une baseline simple : reproductible, sobre, explicable. On complexifie si le besoin est avéré.
+- Impliquer les parties prenantes au plus tôt. A une époque où coder devient plus simple, c'est le regard produit qui fait la différence.
 
+### Merci, des questions ?
+
+### MISC
+
+- Corrélation contre causalité : pour prédire, une corrélation suffit, et c'est pour ça que le modèle "marche". Le problème commence quand on décide : contrôler, refuser, noter quelqu'un, c'est traiter la corrélation comme une propriété de la personne. Prédire n'est pas décider.
+- Aucun de ces mécanismes n'est une erreur de calcul. Et même en les corrigeant tous, il reste un choix de valeurs entre définitions de l'équité : c'est l'objet de l'atelier. Ne pas laisser croire qu'il "suffit de faire de la bonne stat".
+
+Autres exemples
 - Santé, USA, 2019 (origine) : un algorithme hospitalier prédit les dépenses comme proxy des besoins de soin. Comme on dépense moins pour les patients noirs à état de santé égal, il les juge en meilleure santé. Corriger le proxy ferait passer leur part dans le programme d'accompagnement de 17,7 % à 46,5 %. Echo direct au "est-ce le bon critère ?" d'Elise.
 - COMPAS, USA, 2016 (origine, justice) : score de risque de récidive utilisé par des juges. Enquête ProPublica : parmi les personnes qui n'ont pas récidivé, 45 % des Noirs avaient été classés à haut risque contre 23 % des Blancs. L'origine n'est pas une variable d'entrée, mais les arrestations passées, le quartier ou l'emploi en sont des proxys. C'est le cas réel derrière le temps 1 de l'atelier.
 - Gender Shades, 2018 (sexe + couleur de peau) : trois logiciels commerciaux de classification de genre, 0,8 % d'erreur sur les hommes à peau claire contre 34,7 % sur les femmes à peau foncée, par sous-représentation dans les données d'entraînement. Aussi cité en conclusion.

@@ -8,6 +8,16 @@
 - Amnesty France, recours devant le Conseil d'Etat, octobre 2024 : https://www.amnesty.fr/actualites/france-l-algorithme-de-la-caisse-nationale-des-allocations-familiales-cible-les-plus-precaire/
 - CAF, nouveau modèle de 2026 et chiffres de contrôle : https://caf.fr/allocataires/actualites/actualites-nationales/controles-caf-un-nouvel-algorithme-plus-transparent
 
+## Fraude ou erreur : complexité des règles
+
+- Wikipédia (fr), "Fraude sociale en France" : https://fr.wikipedia.org/wiki/Fraude_sociale_en_France
+- Compléments :
+  - Banque des Territoires, "RSA : sur 7,5 milliards de dépenses, le taux d'erreur est de 10 %" : https://www.banquedesterritoires.fr/rsa-sur-75-milliards-de-depenses-le-taux-derreur-est-de-10
+  - Previssima, Cour des comptes, 8 % des prestations entachées d'erreurs en 2024 : https://www.previssima.fr/actualite/prime-dactivite-rsa-apl-8-du-montant-des-prestations-sont-entachees-derreurs-denonce-la-cour-des-comptes-7049.html
+  - Banque des Territoires, refus de certification des comptes de la branche famille (96 % et 83 %, propos du directeur de la CNAF) : https://www.banquedesterritoires.fr/la-cour-des-comptes-refuse-de-certifier-les-comptes-de-la-branche-famille-et-met-en-cause-les
+  - Défenseur des droits, "Lutte contre la fraude aux prestations sociales : à quel prix pour les droits des usagers ?", synthèse, 2017 : https://www.defenseurdesdroits.fr/sites/default/files/2023-07/ddd_rapport_fraudessociales_2017_synthese_20170906.pdf
+  - CAF du Var, dossier de presse 2021 (typologie nationale des fraudes 2019) : https://www.caf.fr/sites/default/files/medias/831/2021%20Presse/20210521_DP_Fraudes_%C3%A0_enjeux_CAF83.pdf
+
 ## Redlining
 
 - Wikipédia (fr), "Redlining" : https://fr.wikipedia.org/wiki/Redlining
@@ -38,6 +48,24 @@
 - Wikipédia (en), "2020 United Kingdom school exam grading controversy" (existence non revérifiée) : https://en.wikipedia.org/wiki/2020_United_Kingdom_school_exam_grading_controversy
 - Complément : HEPI, août 2020 (petits effectifs et écoles privées) : https://www.hepi.ac.uk/2020/08/22/weekend-reading-how-might-ofqual-have-avoided-this-turmoil/
 
+## Tri de CV par des modèles de langage
+
+- Wikipédia (en), "Algorithmic bias" (section sur le recrutement et les grands modèles de langage) : https://en.wikipedia.org/wiki/Algorithmic_bias
+- Compléments :
+  - Wilson et Caliskan, "Gender, Race, and Intersectional Bias in Resume Screening via Language Model Retrieval", AIES 2024 : https://arxiv.org/abs/2407.20371
+  - Bloomberg, "OpenAI's GPT Is a Recruiter's Dream Tool. Tests Show There's Racial Bias", mars 2024 (données sur GitHub, conclusions contestées) : https://github.com/BloombergGraphics/2024-openai-gpt-hiring-racial-discrimination
+
+## IA générative, dernières nouvelles (2024-2026)
+
+- Wikipédia (en), "Algorithmic bias" (section sur les grands modèles de langage) : https://en.wikipedia.org/wiki/Algorithmic_bias
+- Racisme caché : Hofmann, Kalluri, Jurafsky et King, "AI generates covertly racist decisions about people based on their dialect", *Nature*, 2024 : https://doi.org/10.1038/s41586-024-07856-5
+- Workday : HR Dive, mai 2025 : https://www.hrdive.com/news/workday-ai-bias-lawsuit-class-collective-action/748518/
+- Salaire, THWS, juillet 2025 : article original à retrouver (équipe d'Ivan Yamshchikov). Lecture critique de la couverture presse : https://birchtree.me/blog/another-good-study-with-questionable-reporting-on-llms/
+- Santé, LSE, août 2025 : https://www.business-humanrights.org/en/latest-news/uk-ai-tools-downplay-womens-health-issues-study-finds/ et https://www.eweek.com/news/womens-healthcare-ai-gender-bias/
+- Assistants, Université de Limerick :
+  - Euronews, 5 octobre 2026 : https://fr.euronews.com/2026/10/05/les-agents-dia-feminins-seraient-payes-10-de-moins-que-les-masculins-selon-une-etude
+  - Etude originale, "Human-Like and Male? How AI Assistant Design Relates to Trust and Monetary Reward at Work in VR" : https://dl.acm.org/doi/10.1145/3829807.3829910
+
 ## Biais du survivant
 
 - Wikipédia (fr), "Biais des survivants" : https://fr.wikipedia.org/wiki/Biais_des_survivants
@@ -55,6 +83,14 @@
 ## Spurious correlations
 
 - Tyler Vigen, "Spurious Correlations" : https://www.tylervigen.com/spurious-correlations
+- Citation attribuée à Ronald Coase, origine retracée par Quote Investigator : https://quoteinvestigator.com/2021/01/18/confess/
+- Wikiquote (en), "Ronald Coase" : https://en.wikiquote.org/wiki/Ronald_Coase
+
+## Paradoxe de Simpson : les admissions de Berkeley
+
+- Wikipédia (fr), "Paradoxe de Simpson" : https://fr.wikipedia.org/wiki/Paradoxe_de_Simpson
+- Wikipédia (en), "Simpson's paradox" (section "UC Berkeley gender bias", avec le tableau des six plus grandes filières) : https://en.wikipedia.org/wiki/Simpson%27s_paradox
+- Complément : Bickel, Hammel et O'Connell, "Sex Bias in Graduate Admissions: Data from Berkeley", *Science*, 1975 : https://doi.org/10.1126/science.187.4175.398
 
 ## Conclusion : trop-perçus, fraude et non-recours
 
@@ -73,6 +109,7 @@
 - Wikipédia (fr), "William Bunge" : https://fr.wikipedia.org/wiki/William_Bunge
 - Wikipédia (en), "William Bunge" (Detroit Geographical Expedition) : https://en.wikipedia.org/wiki/William_Bunge
 - Wikipédia (fr), "Contre-cartographie" : https://fr.wikipedia.org/wiki/Contre-cartographie
+- Mapping Inequality, Université de Richmond : https://dsl.richmond.edu/panorama/redlining/
 
 ## Pays-Bas : affaire des allocations de garde d'enfants
 
@@ -100,3 +137,10 @@
 
 - Wikipédia (en), "Algorithmic bias" : https://en.wikipedia.org/wiki/Algorithmic_bias
 - Complément : Obermeyer et al., *Science*, 2019 (17,7 % et 46,5 %) : https://doi.org/10.1126/science.aax2342
+## Crédits des images (Wikimedia Commons)
+
+- `pictures/caf.jpg` : "CAF (Caisse d'Allocations Familiales), Paris 15.JPG", Fabio Gargano, CC BY-SA 4.0 : https://commons.wikimedia.org/wiki/File:CAF_(Caisse_d%27Allocations_Familiales),_Paris_15.JPG
+- `pictures/crash-test-dummies.jpg` : "Hybrid-III 5th next to THOR-5F Crash Test Dummy.jpg", Human Crash Safety, CC BY-SA 4.0 : https://commons.wikimedia.org/wiki/File:Hybrid-III_5th_next_to_THOR-5F_Crash_Test_Dummy.jpg
+- `pictures/st-georges.jpg` : "St George's Hospital, Tooting - geograph.org.uk - 938157.jpg", Stephen Craven, CC BY-SA 2.0 : https://commons.wikimedia.org/wiki/File:St_George%27s_Hospital,_Tooting_-_geograph.org.uk_-_938157.jpg
+- `pictures/apb.jpg` : "Page d'accueil APB 2015.jpg", Jeremy77186, CC BY-SA 4.0 : https://commons.wikimedia.org/wiki/File:Page_d%27accueil_APB_2015.jpg
+- `pictures/amazon-spheres.jpg` : "Amazon Spheres 2018.jpg", Andy Li, CC0 : https://commons.wikimedia.org/wiki/File:Amazon_Spheres_2018.jpg

@@ -10,3 +10,6 @@
 
 /* Image seule */
 .reveal section > p > img { max-height: 400px; margin: 0; }
+
+/* Citation à côté d'une image flottante : rester dans la colonne de texte */
+.reveal section.img-right > blockquote { width: auto; margin: 20px 0; overflow: hidden; }

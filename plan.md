@@ -30,6 +30,8 @@ Ca ne date pas d'hier. On annonce une grille "où ça casse ?" (dans les donnée
 - APB, 2016 : longue bataille pour accès à l'algo du code source, le code est livré sur papier. "Malicious compliance" : ici ce qui pose souci c'est la question de boite noire venant empêcher l'auditabilité du code
 - L'algorithme utilisé par Amazon pour sélectionner des CV, qui discriminait les femmes (à cause de la sur-représentation d'hommes dans les profils déjà embauchés par l'entreprise) : https://www.numerama.com/tech/426774-amazon-a-du-desactiver-une-ia-qui-discriminait-les-candidatures-de-femmes-a-lembauche.html
 - Notes des A-levels en Angleterre, 2020 : correlation <> causation, "Fuck the algorithm"
+- Tri de CV par des modèles de langage (ATS), 2024 : le dataset d'entrainement, version IA générative d'Amazon
+- IA générative, dernières nouvelles 2024-2026, en une slide : racisme caché par dialecte (Nature), procès Workday sur l'âge, conseils de salaire genrés, résumés d'aide sociale (LSE), assistants genrés payés 10 % de moins : https://fr.euronews.com/2026/10/05/les-agents-dia-feminins-seraient-payes-10-de-moins-que-les-masculins-selon-une-etude
 - CAF : détection fraudes -> [Le monde](https://www.lemonde.fr/les-decodeurs/article/2023/12/04/profilage-et-discriminations-enquete-sur-les-derives-de-l-algorithme-des-caisses-d-allocations-familiales_6203796_4355770.html) ou [Quadrature du net](https://www.laquadrature.net/2022/12/23/notation-des-allocataires-febrile-la-caf-senferme-dans-lopacite/). C'est le cas de l'accroche, il cumule presque tous les mécanismes
 
 
@@ -72,7 +74,7 @@ Re-division en 3 groupes, choix d'un acteur pour lequel on réfléchit à : "Que
 
 ## V. Ouverture optimiste (20 min)
 
-Quelques caveats pour leur métier : le biais du survivant (les avions de 1943), la loi de Goodhart (les rats de Hanoï, 1902), les corrélations fallacieuses (Spurious correlations). Puis retour sur l'algo de la CNAF : qu'est-ce que vous changeriez ?
+Quelques caveats pour leur métier : le biais du survivant (les avions de 1943), la loi de Goodhart (les rats de Hanoï, 1902), les corrélations fallacieuses (Spurious correlations), le paradoxe de Simpson (admissions de Berkeley, 1973). Puis retour sur l'algo de la CNAF : qu'est-ce que vous changeriez ? Et rappel du redlining pour parler cartographie radicale (Bunge à Detroit, Mapping Inequality) avant "où et comment agir".
 
 L'objectif n'est pas de dégouter du métier bien entendu ; il s'agit juste d'essayer de détricoter l'idée de "science ou algo neutre". Chaque algo porte en soit des biais il est important d'en avoir conscience et être capable de les reconnaître et faire évoluer.
 

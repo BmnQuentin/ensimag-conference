@@ -15,7 +15,7 @@ Vous êtes data scientist à la CNAF :
 - 13.8 millions de foyers allocataires
 - ~700 contrôleurs
 
-<p class="fragment"><strong>Votre mission</strong> : déterminer quels dossiers contrôler pour récupérer le plus d'argent versé à tort</p>
+**Votre mission** : déterminer quels dossiers contrôler pour récupérer le plus d'argent versé à tort
 
 ---
 
@@ -39,6 +39,10 @@ Vous êtes data scientist à la CNAF :
 
 ## Ce modèle existe vraiment
 
+<!-- .slide: class="img-right" -->
+
+![Façade d'une agence de la CAF à Paris](pictures/caf.jpg)
+
 Donne à chaque foyer un score recalculé chaque mois.
 
 10 variables retenues parmi 1000 informations
@@ -60,21 +64,15 @@ Le modèle prédit les **trop-perçus**, pas la fraude
 
 On se trompe là où les règles sont compliquées <!-- .element: class="fragment" -->
 
-Le score mesure la complexité des règles, pas la malhonnêteté <!-- .element: class="fragment" -->
+Le score ne voit pas l'intention : il mesure surtout l'exposition à des règles complexes <!-- .element: class="fragment" -->
 
 ---
 
-## Où ça casse ?
+## Qu'est-ce qui pose problème et pourquoi ?
 
-Des causes potentiellement multiples
+Des causes potentiellement multiples, mais en général elles s'appuient sur une reproduction du passé et une confusion entre corrélation et causalité.
 
-| Dans les données | Dans le modèle | Dans l'usage |
-|---|---|---|
-| La reproduction du passé | Correlation <> causation | La prophétie auto-réalisatrice |
-| Le dataset d'entrainement | La loi de Goodhart | La boîte noire |
-| Les survivants | | |
-
-Sept exemples, de 1935 à aujourd'hui
+Neuf exemples, de 1935 à aujourd'hui
 
 ---
 
@@ -86,9 +84,11 @@ Sept exemples, de 1935 à aujourd'hui
 
 La prophétie auto-réalisatrice <!-- .element: class="tag" -->
 
-239 villes américaines notées de A à D
+239 villes américaines notées de A à D <!-- .element: class="fragment" -->
 
 Pas de prêt -> pas d'investissement -> le quartier se dégrade -> la carte "avait raison" <!-- .element: class="fragment" -->
+
+On retrouve la notion de proxy <!-- .element: class="fragment" -->
 
 <small>Source : Mapping Inequality, Université de Richmond</small>
 
@@ -96,13 +96,17 @@ Pas de prêt -> pas d'investissement -> le quartier se dégrade -> la carte "ava
 
 ## Années 1970 : crash-tests
 
+<!-- .slide: class="img-right" -->
+
+![Mannequin Hybrid III 5e centile à côté du mannequin féminin THOR-5F](pictures/crash-test-dummies.jpg)
+
 Le dataset d'entrainement <!-- .element: class="tag" -->
 
-Mannequin de référence = l'homme "moyen"
+Mannequin de référence = l'homme "moyen" <!-- .element: class="fragment" -->
 
 Conductrices : risque de blessure grave +47% <!-- .element: class="fragment" -->
 
-Biais dans l'échantillon statistique, avec lien sur le modèle physique. Se retrouve encore par exemple dans la pharmacologie. <!-- .element: class="fragment" -->
+Biais dans l'échantillon statistique, avec lien sur le modèle physique. Se retrouve encore par exemple dans la pharmacologie (eg somnifère Zolpidem). <!-- .element: class="fragment" -->
 
 <small>Source : Bose et al., American Journal of Public Health, 2011</small>
 
@@ -110,13 +114,19 @@ Biais dans l'échantillon statistique, avec lien sur le modèle physique. Se ret
 
 ## 1979 : St George's, Londres
 
+<!-- .slide: class="img-right" -->
+
+![Hôpital St George's, Tooting, Londres](pictures/st-georges.jpg)
+
 La reproduction du passé <!-- .element: class="tag" -->
 
-Programme designé pour imiter jury d'admission : jusqu'à 95 % de corrélation. Peut-on en déduire que c'étais satisfaisant ?
+Programme écrit pour imiter jury d'admission : jusqu'à 95 % de corrélation. Peut-on en déduire que c'étais satisfaisant ? <!-- .element: class="fragment" -->
 
 L'algo pénalise les femmes et les noms non européens, comme le jury <!-- .element: class="fragment" -->
 
 Jusqu'à 60 candidats écartés par an <!-- .element: class="fragment" -->
+
+Fin de l'algo en 1988, 9 ans après, jugement pour discrimination <!-- .element: class="fragment" -->
 
 > "The prejudice of a computer is no less than that of its designers" <!-- .element: class="fragment" -->
 
@@ -126,11 +136,15 @@ Jusqu'à 60 candidats écartés par an <!-- .element: class="fragment" -->
 
 ## 2016 : APB
 
+<!-- .slide: class="img-right" -->
+
+![Page d'accueil du site Admission Post-Bac en 2015](pictures/apb.jpg)
+
 La boîte noire <!-- .element: class="tag" -->
 
-Mars : association de lycéens demande le code source
+Mars : association de lycéens demande le code source <!-- .element: class="fragment" -->
 
-<p class="fragment">Octobre : après des mois de bataille judiciaire, le code est envoyé imprimé par la poste, sur papier : cas de <em>malicious compliance</em></p>
+Octobre : après des mois de bataille judiciaire, le code est envoyé imprimé par la poste, sur papier : cas de "malicious compliance" <!-- .element: class="fragment" -->
 
 Pas d'audit, pas de biais détectable <!-- .element: class="fragment" -->
 
@@ -140,13 +154,19 @@ Pas d'audit, pas de biais détectable <!-- .element: class="fragment" -->
 
 ## 2018 : Amazon et les CV
 
+<!-- .slide: class="img-right" -->
+
+![Les Amazon Spheres, siège d'Amazon à Seattle](pictures/amazon-spheres.jpg)
+
 Le dataset d'entrainement <!-- .element: class="tag" -->
 
-Outil de tri entraîné sur 10 ans de CV reçus, surtout masculins
+Outil de tri entraîné sur 10 ans de CV reçus, surtout masculins <!-- .element: class="fragment" -->
 
 Le genre n'est pas une variable... <!-- .element: class="fragment" -->
 
-...mais le mot "women" dans un CV fait baisser la note <!-- .element: class="fragment" -->
+...mais le mot "women's" (ex : women's chess club)dans un CV fait baisser la note <!-- .element: class="fragment" -->
+
+Il s'agit encore une fois d'un proxy, neutralisé mais comment s'assurer que le modèle n'en utilisera pas d'autres ? <!-- .element: class="fragment" -->
 
 <small>Sources : Reuters, Numerama, 2018</small>
 
@@ -160,37 +180,74 @@ Le genre n'est pas une variable... <!-- .element: class="fragment" -->
 
 Correlation <> causation <!-- .element: class="tag" -->
 
-Covid : examens annulés et notes ajustées selon l'historique du lycée
+Covid : examens annulés et notes ajustées selon l'historique du lycée <!-- .element: class="fragment" -->
 
-Objectif du modèle : éviter l'inflation des notes
+Objectif du modèle : éviter l'inflation des notes <!-- .element: class="fragment" -->
 
 39,1 % des notes abaissées, très majoritairement dans les milieux défavorisés <!-- .element: class="fragment" -->
 
 Héritage in-code des notes des prédécesseurs. <!-- .element: class="fragment" -->
 
-<p class="fragment"><em>Fuck the algorithm</em> -> retrait en 4 jours</p>
+Manifestations <!-- .element: class="fragment" --> *Fuck the algorithm* -> retrait en 4 jours
 
 <small>Sources : Ofqual, HEPI, 2020</small>
 
 ---
 
+## 2024 : des modèles de langage trient les CV
+
+<!-- .slide: class="img-right" -->
+
+![Deux CV identiques, seul le prénom change](pictures/cv-bias.avif)
+
+Le dataset d'entrainement <!-- .element: class="tag" -->
+
+Mêmes CV, seul le prénom change <!-- .element: class="fragment" -->
+
+Prénoms associés aux personnes blanches préférés dans 85 % des cas <!-- .element: class="fragment" -->
+
+Prénoms féminins préférés dans 11 % des cas <!-- .element: class="fragment" -->
+
+Hommes noirs : désavantagés dans jusqu'à 100 % des cas <!-- .element: class="fragment" -->
+
+<small>Source : Wilson & Caliskan, Université de Washington, 2024</small>
+
+---
+
+## 2024-2026 : l'IA générative, aux dernières nouvelles tout va bien
+
+<!-- .slide: class="img-right" -->
+
+![Deux CV identiques, seul le prénom change](pictures/genai-bias.jpg)
+
+Racisme caché : un texte en anglais afro-américain, et le modèle propose des emplois moins prestigieux et plus de condamnations à mort (Nature, 2024) <!-- .element: class="fragment" -->
+
+Salaire : à profil identique, les chatbots conseillent aux femmes de demander moins (THWS, 2025) <!-- .element: class="fragment" -->
+
+Santé : des résumés de dossiers d'aide sociale minimisent les besoins des femmes (LSE, 2025) <!-- .element: class="fragment" -->
+
+Assistants : à IA identique, l'avatar féminin est rémunéré 10 % de moins par les utilisateurs (Limerick, 2026) <!-- .element: class="fragment" -->
+
+<small>Sources : Hofmann et al., Nature ; HR Dive ; THWS ; LSE ; Université de Limerick via Euronews</small>
+
+---
+
 ## En résumé
 
-| | Mécanisme | Exemple |
+Une multiplicité des mécanismes 
+
+
+| Dans les données | Dans le modèle | Dans l'usage |
 |---|---|---|
-| Données | La reproduction du passé | St George's |
-| Données | Le dataset d'entrainement | Crash-tests, Amazon |
-| Données | Les survivants | en fin de séance |
-| Modèle | Correlation <> causation | A-levels |
-| Modèle | La loi de Goodhart | en fin de séance |
-| Usage | La prophétie auto-réalisatrice | Redlining |
-| Usage | La boîte noire | APB |
+| La reproduction du passé | Correlation <> causation | La prophétie auto-réalisatrice |
+| Le dataset d'entrainement | La loi de Goodhart | La boîte noire |
+| Les survivants | | |
 
 ---
 
 ## Et la CAF ?
 
-Elle en cumule cinq sur sept
+Elle en cumule beaucoup !
 
 - reproduction du passé : apprise sur les contrôles passés <!-- .element: class="fragment" -->
 - correlation <> causation : précarité et erreurs <!-- .element: class="fragment" -->
@@ -200,7 +257,7 @@ Elle en cumule cinq sur sept
 
 ---
 
-## Nos expériences
+## Comment cela se retrouve dans nos expériences
 
 ---
 
@@ -211,6 +268,9 @@ Elle en cumule cinq sur sept
 
 ### Quentin
 
+- Entreprise majeure du BTP : optimisation de cycles de grue et de tombereaux. Si on optimise ça doit être mieux ? <!-- .element: class="fragment" -->
+- Startup de traitement de données géospatiales : from massification de la rénovation énergétique to pricing assurance <!-- .element: class="fragment" -->
+- Coopérative data pour projets public : drivé par l'impact <!-- .element: class="fragment" -->
 
 ---
 
@@ -246,21 +306,17 @@ Les algorithmes utilisés dans des domaines critiques (santé, justice, finance)
 
 ---
 
-# Et pour finir
-
----
-
-## Quelques caveats pour votre métier
-
-- Les données **que vous n'avez pas** sont importantes <!-- .element: class="fragment" -->
-- L'indicateur qu'on vous **demande d'optimiser** n'a plus d'intérêt <!-- .element: class="fragment" -->
-- **Trop beau** pour être vrai ? Sans doute <!-- .element: class="fragment" -->
+# Et pour finir, quelques exemples
 
 ---
 
 ## 1943 : les avions qui reviennent
 
+Le biais du survivant <!-- .element: class="tag" -->
+
 ![Schéma du biais du survivant : impacts relevés sur les avions revenus](pictures/survivor-bias.webp)
+
+> Les données manquantes ne manquent jamais au hasard
 
 <small>Abraham Wald, Statistical Research Group, 1943</small>
 
@@ -268,21 +324,42 @@ Les algorithmes utilisés dans des domaines critiques (santé, justice, finance)
 
 ## 1902 : les rats de Hanoï
 
+La loi de Goodhart <!-- .element: class="tag" -->
+
 ![Estampe vietnamienne représentant des rats](pictures/hanoi-rats.jpg)
 
-> Quand une mesure devient une cible, elle cesse d'être une bonne mesure <!-- .element: class="fragment" -->
-
-<small>Loi de Goodhart, 1975</small>
+> Quand une mesure devient une cible, elle cesse d'être une bonne mesure - Marilyn Strathern, 1997
 
 ---
 
-## Spurious correlations
+## 201x : Internet
+
+Spurious correlations <!-- .element: class="tag" -->
 
 ![Exemple de corrélation fallacieuse (Tyler Vigen)](pictures/spurious-correlation.svg)
 
-Avec assez de variables, on trouve toujours une corrélation <!-- .element: class="fragment" -->
+> Si on torture les données assez longtemps, elles finissent par avouer - Ronald Coase, années 1960
 
-<small>Tyler Vigen - Spurious correlations</small>
+<small>Graphique : Tyler Vigen, Spurious Correlations</small>
+
+---
+
+## 1973 : les admissions de Berkeley
+
+Le paradoxe de Simpson <!-- .element: class="tag" -->
+
+Taux d'admission en master, automne 1973
+
+| | Hommes | Femmes |
+|---|---|---|
+| Toutes filières | 44 % | 35 % |
+| Filière A | 62 % (825 candidats) | 82 % (108 candidates) |
+| Filière B | 63 % (560) | 68 % (25) |
+| Filière F | 6 % (373) | 7 % (341) |
+
+> Un chiffre global peut dire l'inverse de chacune de ses parties
+
+<small>Bickel, Hammel & O'Connell, Science, 1975</small>
 
 ---
 
@@ -290,13 +367,7 @@ Avec assez de variables, on trouve toujours une corrélation <!-- .element: clas
 
 Qu'est-ce que vous changeriez ?
 
----
-
-## Et par rapport à l'algo de la CNAF
-
-Qu'est-ce que vous changeriez ?
-
-Pas de réponse générale hélas mais quelques pistes : 
+Pas de réponse générale hélas mais quelques pistes : <!-- .element: class="fragment" -->
 - Requestionner le besoin <!-- .element: class="fragment" -->
 - Traiter la cause <!-- .element: class="fragment" -->
 - Encadrer le modèle de ciblage (si le besoin reste avéré) <!-- .element: class="fragment" -->
@@ -305,11 +376,30 @@ Pas de réponse générale hélas mais quelques pistes :
 
 ## Quelques questions à vous poser
 
-1. Sur quelles données du passé est entraîné mon algo ? <!-- .element: class="fragment" -->
-2. Qui est absent des données ? <!-- .element: class="fragment" -->
-3. Quel critère j'optimise, et qui l'a choisi ? <!-- .element: class="fragment" -->
-4. D'où vient la demande, est-ce que je permets aux parties prenantes de contester / auditer ? <!-- .element: class="fragment" -->
-5. Est-ce que j'ai un regard statistique et citoyen, produit, et pas juste "belle techno" ? <!-- .element: class="fragment" -->
+1. Sur quelles données du passé mon algo est-il entraîné, et qui en est absent ? <!-- .element: class="fragment" -->
+2. Quel critère j'optimise, et qui l'a choisi ? <!-- .element: class="fragment" -->
+3. Ce résultat n'est-il pas trop beau pour être vrai ? <!-- .element: class="fragment" -->
+4. Le chiffre global tient-il quand je le découpe ? <!-- .element: class="fragment" -->
+5. D'où vient la demande, et les parties prenantes peuvent-elles contester ou auditer ? <!-- .element: class="fragment" -->
+6. Est-ce que j'ai un regard critique, statistique et citoyen, produit, et pas juste "belle techno" ? <!-- .element: class="fragment" -->
+
+---
+
+## Retour en 1935 : la cartographie radicale
+
+<!-- .slide: class="img-right" -->
+
+![Carte de redlining (HOLC)](pictures/redlining.jpg)
+
+Les mêmes outils peuvent aussi rendre visible
+
+1968-1971 : à Detroit, le géographe William Bunge fait cartographier la ville par ses habitants <!-- .element: class="fragment" -->
+
+2016 : les cartes de redlining numérisées et ouvertes à tous (Mapping Inequality) <!-- .element: class="fragment" -->
+
+> Qui choisit ce qu'on mesure choisit ce qu'on voit <!-- .element: class="fragment" -->
+
+<small>Sources : W. Bunge, Fitzgerald, 1971 ; Université de Richmond</small>
 
 ---
 
@@ -320,8 +410,7 @@ Dans des assos :
 - La Quadrature du Net
 - The Shift Project
 
-Mais surtout en faisant bien votre métier <!-- .element: class="fragment" -->
-Et en doutant <!-- .element: class="fragment" -->
+Mais surtout en faisant bien votre métier au quotidien <!-- .element: class="fragment" -->
 
 ---
 
