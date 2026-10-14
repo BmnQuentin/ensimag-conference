@@ -15,7 +15,7 @@ Vous êtes data scientist à la CNAF :
 - 13.8 millions de foyers allocataires
 - ~700 contrôleurs
 
-**Votre mission** : déterminer quels dossiers contrôler pour récupérer le plus d'argent versé à tort 
+<p class="fragment"><strong>Votre mission</strong> : déterminer quels dossiers contrôler pour récupérer le plus d'argent versé à tort</p>
 
 ---
 
@@ -45,10 +45,10 @@ Donne à chaque foyer un score recalculé chaque mois.
 
 Ce qui fait monter le score (versions 2010-2018) :
 
-- faibles revenus, chômage, RSA
-- handicap (AAH), surtout avec un emploi
-- parent isolé
-- quartier défavorisé
+- faibles revenus, chômage, RSA <!-- .element: class="fragment" -->
+- handicap (AAH), surtout avec un emploi <!-- .element: class="fragment" -->
+- parent isolé <!-- .element: class="fragment" -->
+- quartier défavorisé <!-- .element: class="fragment" -->
 
 <small>Sources : La Quadrature du Net (2023), Le Monde (2023), Amnesty (2024)</small>
 
@@ -58,9 +58,9 @@ Ce qui fait monter le score (versions 2010-2018) :
 
 Le modèle prédit les **trop-perçus**, pas la fraude
 
-On se trompe là où les règles sont compliquées
+On se trompe là où les règles sont compliquées <!-- .element: class="fragment" -->
 
-Le score mesure la complexité des règles, pas la malhonnêteté
+Le score mesure la complexité des règles, pas la malhonnêteté <!-- .element: class="fragment" -->
 
 ---
 
@@ -88,7 +88,7 @@ La prophétie auto-réalisatrice <!-- .element: class="tag" -->
 
 239 villes américaines notées de A à D
 
-Pas de prêt -> pas d'investissement -> le quartier se dégrade -> la carte "avait raison"
+Pas de prêt -> pas d'investissement -> le quartier se dégrade -> la carte "avait raison" <!-- .element: class="fragment" -->
 
 <small>Source : Mapping Inequality, Université de Richmond</small>
 
@@ -100,9 +100,9 @@ Le dataset d'entrainement <!-- .element: class="tag" -->
 
 Mannequin de référence = l'homme "moyen"
 
-Conductrices : risque de blessure grave +47%
+Conductrices : risque de blessure grave +47% <!-- .element: class="fragment" -->
 
-Biais dans l'échantillon statistique, avec lien sur le modèle physique. Se retrouve encore par exemple dans la pharmacologie.
+Biais dans l'échantillon statistique, avec lien sur le modèle physique. Se retrouve encore par exemple dans la pharmacologie. <!-- .element: class="fragment" -->
 
 <small>Source : Bose et al., American Journal of Public Health, 2011</small>
 
@@ -114,11 +114,11 @@ La reproduction du passé <!-- .element: class="tag" -->
 
 Programme designé pour imiter jury d'admission : jusqu'à 95 % de corrélation. Peut-on en déduire que c'étais satisfaisant ?
 
-L'algo pénalise les femmes et les noms non européens, comme le jury
+L'algo pénalise les femmes et les noms non européens, comme le jury <!-- .element: class="fragment" -->
 
-Jusqu'à 60 candidats écartés par an
+Jusqu'à 60 candidats écartés par an <!-- .element: class="fragment" -->
 
-> "The prejudice of a computer is no less than that of its designers"
+> "The prejudice of a computer is no less than that of its designers" <!-- .element: class="fragment" -->
 
 <small>Source : Lowry & Macpherson, BMJ, 1988</small>
 
@@ -130,9 +130,9 @@ La boîte noire <!-- .element: class="tag" -->
 
 Mars : association de lycéens demande le code source
 
-Octobre : après des mois de bataille judiciaire, le code est envoyé imprimé par la poste, sur papier : cas de *malicious compliance*
+<p class="fragment">Octobre : après des mois de bataille judiciaire, le code est envoyé imprimé par la poste, sur papier : cas de <em>malicious compliance</em></p>
 
-Pas d'audit, pas de biais détectable
+Pas d'audit, pas de biais détectable <!-- .element: class="fragment" -->
 
 <small>Sources : Next, L'Etudiant EducPros, 2016</small>
 
@@ -144,9 +144,9 @@ Le dataset d'entrainement <!-- .element: class="tag" -->
 
 Outil de tri entraîné sur 10 ans de CV reçus, surtout masculins
 
-Le genre n'est pas une variable...
+Le genre n'est pas une variable... <!-- .element: class="fragment" -->
 
-...mais le mot "women" dans un CV fait baisser la note
+...mais le mot "women" dans un CV fait baisser la note <!-- .element: class="fragment" -->
 
 <small>Sources : Reuters, Numerama, 2018</small>
 
@@ -164,11 +164,11 @@ Covid : examens annulés et notes ajustées selon l'historique du lycée
 
 Objectif du modèle : éviter l'inflation des notes
 
-39,1 % des notes abaissées, très majoritairement dans les milieux défavorisés
+39,1 % des notes abaissées, très majoritairement dans les milieux défavorisés <!-- .element: class="fragment" -->
 
-Héritage in-code des notes des prédécesseurs.
+Héritage in-code des notes des prédécesseurs. <!-- .element: class="fragment" -->
 
-*Fuck the algorithm* -> retrait en 4 jours
+<p class="fragment"><em>Fuck the algorithm</em> -> retrait en 4 jours</p>
 
 <small>Sources : Ofqual, HEPI, 2020</small>
 
@@ -192,11 +192,11 @@ Héritage in-code des notes des prédécesseurs.
 
 Elle en cumule cinq sur sept
 
-- reproduction du passé : apprise sur les contrôles passés
-- correlation <> causation : précarité et erreurs
-- loi de Goodhart : l'indicateur, c'est l'argent récupéré
-- prophétie auto-réalisatrice : plus de contrôles, plus d'indus trouvés
-- boîte noire : code inaccessible jusqu'en 2023
+- reproduction du passé : apprise sur les contrôles passés <!-- .element: class="fragment" -->
+- correlation <> causation : précarité et erreurs <!-- .element: class="fragment" -->
+- loi de Goodhart : l'indicateur, c'est l'argent récupéré <!-- .element: class="fragment" -->
+- prophétie auto-réalisatrice : plus de contrôles, plus d'indus trouvés <!-- .element: class="fragment" -->
+- boîte noire : code inaccessible jusqu'en 2023 <!-- .element: class="fragment" -->
 
 ---
 
@@ -252,9 +252,9 @@ Les algorithmes utilisés dans des domaines critiques (santé, justice, finance)
 
 ## Quelques caveats pour votre métier
 
-- Les données que vous n'avez pas sont importantes
-- L'indicateur qu'on vous demande d'optimiser n'a plus d'intérêt
-- Trop beau pour être vrai ? Sans doute
+- Les données **que vous n'avez pas** sont importantes <!-- .element: class="fragment" -->
+- L'indicateur qu'on vous **demande d'optimiser** n'a plus d'intérêt <!-- .element: class="fragment" -->
+- **Trop beau** pour être vrai ? Sans doute <!-- .element: class="fragment" -->
 
 ---
 
@@ -270,7 +270,7 @@ Les algorithmes utilisés dans des domaines critiques (santé, justice, finance)
 
 ![Estampe vietnamienne représentant des rats](pictures/hanoi-rats.jpg)
 
-> Quand une mesure devient une cible, elle cesse d'être une bonne mesure
+> Quand une mesure devient une cible, elle cesse d'être une bonne mesure <!-- .element: class="fragment" -->
 
 <small>Loi de Goodhart, 1975</small>
 
@@ -280,7 +280,7 @@ Les algorithmes utilisés dans des domaines critiques (santé, justice, finance)
 
 ![Exemple de corrélation fallacieuse (Tyler Vigen)](pictures/spurious-correlation.svg)
 
-Avec assez de variables, on trouve toujours une corrélation
+Avec assez de variables, on trouve toujours une corrélation <!-- .element: class="fragment" -->
 
 <small>Tyler Vigen - Spurious correlations</small>
 
@@ -297,19 +297,19 @@ Qu'est-ce que vous changeriez ?
 Qu'est-ce que vous changeriez ?
 
 Pas de réponse générale hélas mais quelques pistes : 
-- Requestionner le besoin
-- Traiter la cause 
-- Encadrer le modèle de ciblage (si le besoin reste avéré)
+- Requestionner le besoin <!-- .element: class="fragment" -->
+- Traiter la cause <!-- .element: class="fragment" -->
+- Encadrer le modèle de ciblage (si le besoin reste avéré) <!-- .element: class="fragment" -->
 
 ---
 
 ## Quelques questions à vous poser
 
-1. Sur quelles données du passé est entraîné mon algo ?
-2. Qui est absent des données ?
-3. Quel critère j'optimise, et qui l'a choisi ?
-4. D'où vient la demande, est-ce que je permets aux parties prenantes de contester / auditer ?
-5. Est-ce que j'ai un regard statistique et citoyen, produit, et pas juste "belle techno" ?
+1. Sur quelles données du passé est entraîné mon algo ? <!-- .element: class="fragment" -->
+2. Qui est absent des données ? <!-- .element: class="fragment" -->
+3. Quel critère j'optimise, et qui l'a choisi ? <!-- .element: class="fragment" -->
+4. D'où vient la demande, est-ce que je permets aux parties prenantes de contester / auditer ? <!-- .element: class="fragment" -->
+5. Est-ce que j'ai un regard statistique et citoyen, produit, et pas juste "belle techno" ? <!-- .element: class="fragment" -->
 
 ---
 
@@ -320,7 +320,8 @@ Dans des assos :
 - La Quadrature du Net
 - The Shift Project
 
-Mais surtout en faisant bien votre métier
+Mais surtout en faisant bien votre métier <!-- .element: class="fragment" -->
+Et en doutant <!-- .element: class="fragment" -->
 
 ---
 
