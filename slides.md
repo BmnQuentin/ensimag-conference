@@ -307,8 +307,6 @@ On vous propose de dé/reconstruire des algorithmes, et de réfléchir à qui a 
 
 ## Les cas d’étude
 
-<!-- .slide: class="img-right" -->
-
 ![cas-detude-atelier](pictures/cas-detude-atelier.png)
 
 
