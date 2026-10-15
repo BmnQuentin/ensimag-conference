@@ -263,7 +263,16 @@ Elle en cumule beaucoup !
 
 ### Élise
 
-
+- Data scientist/analyst dans une PME pendant 2 ans sur des projets d'**optimisation de collectes de déchets**
+  
+- Projet **My City'Challenge** : optimisation du positionnement de bennes de tri sélectif dans une ville
+  
+- Travail sur les **différentes phases du projet** : récolte des données, préparation, stratégie d'analyse, clustering, modèle prédictif, carte de chaleur pour identifier des lieux où déplacer des bennes, expérimentation, rapport
+  
+- **Questionnements par rapport aux limites du modèle**
+  
+- On juge la qualité d'un modèle sur le critère qu'on a décidé d'optimiser, mais est-ce toujours le bon critère ?
+  
 ---
 
 ### Quentin
@@ -274,9 +283,61 @@ Elle en cumule beaucoup !
 
 ---
 
-## Atelier
+## Atelier : Quelle gouvernance pour les algorithmes ?
 
-À voir ensemble je suis pas super sûr
+On vous propose de dé/reconstruire des algorithmes, et de réfléchir à qui a une voix dans la manière dont ces systèmes sont décidés, conçus et évalués. 
+
+---
+
+## Les cas d’étude
+
+- Albert : Système d’IA générative pour trouver des réponses à des questions administratives
+
+- CNAF - Data mining données entrantes : Système de score de risque pour prioriser les contrôles des allocataires
+
+- Vidéosurveillance algorithmique : Traitement d’images vidéo en temps réel pour identifier et suivre de manière automatisée un individu
+
+---
+
+## Temps 1 : cartographie d’acteurs
+
+Qui est en prise avec l’algorithme ? 
+Comment l’influence-t-il ? Comment est-il impacté ?
+
+---
+
+## Fiche acteur
+
+**Type d’acteur**
+Une explication associée
+
+**Influence de l’acteur**
+On entend par influence la capacité de l’acteur à orienter 
+la conception de l’algorithme, que ce soit dans son fonctionnement ou dans son existence même. 
+
+**Impacts sur l’acteur**
+On entend par impact tout effet positif ou négatif que l’algorithme peut avoir sur la structure. 
+*Par exemple : l’algorithme peut-il avoir une conséquence sur la vie d’un administré ? Sur les conditions de travail des agents publics ? Sur les politiques publiques menées par une administration ?*
+
+---
+
+## Temps 2 : penser de nouvelles modalités de gouvernance
+
+Dans un monde idéal, quelle(s) forme(s) de gouvernance mettre en place pour permettre à plus d’acteurs d’avoir un poids dans la prise de décision ?
+
+---
+
+## Fiche gouvernance
+
+**Acteur**
+Choisir un acteur sur lequel vous souhaitez vous concentrer
+
+**Influence**
+Définissez le type d’influence que l’acteur devrait avoir
+
+**Modalité de gouvernance**
+Quelle(s) solution(s) envisager pour permettre à l’acteur de participer à la prise de décision sur le système algorithmique et d’accroître son influence dessus ?
+*Vous êtes libres dans les solutions que vous envisagez : cela peut se situer au niveau des interfaces existants pour interagir avec l’algorithme, peut être une proposition de création d’un collectif d’audit citoyen, la création d’une loi pour interdire ou rendre obligatoire certaines pratiques…*
 
 ---
 
@@ -411,6 +472,11 @@ Dans des assos :
 - The Shift Project
 
 Mais surtout en faisant bien votre métier au quotidien <!-- .element: class="fragment" -->
+
+
+---
+
+## Petit focus Data for Good : quelques exemples de projets
 
 ---
 
