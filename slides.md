@@ -9,6 +9,12 @@ revealOptions:
 
 ---
 
+# Neutralité et algorithmes
+
+Élise & Quentin
+
+---
+
 # Pour commencer
 
 Vous êtes data scientist à la CNAF : 
@@ -28,12 +34,6 @@ Vous êtes data scientist à la CNAF :
 | Situation familiale | Âge |
 | Type d'allocation | Ancienneté du dossier |
 | Changements de situation déclarés | Situation professionnelle |
-
----
-
-# Neutralité et algorithmes
-
-Élise & Quentin
 
 ---
 

@@ -73,7 +73,7 @@ Mécanisme : la boîte noire. Seul exemple où le problème n'est pas un biais m
 - L'association Droits des lycéens demande le code source en mars 2016. Après avis favorable de la CADA, le ministère envoie en octobre une vingtaine de pages imprimées, limitées au tirage au sort des licences en tension.
 - "Malicious compliance" : ce qui pose souci ici, c'est la boîte noire qui empêche l'auditabilité. Sans audit possible, aucun des biais précédents ne peut être détecté.
 
-### 2018 : Amazon et les CV (sexe)
+### 2018 : Amazon et les CV (sexe) - Elise
 
 Mécanisme : le dataset d'entraînement, les embauches passées étant surtout masculines. 
 
@@ -83,7 +83,7 @@ Mécanisme : le dataset d'entraînement, les embauches passées étant surtout m
 - Les ingénieurs neutralisent ces termes, sans pouvoir garantir que le modèle n'en trouvera pas d'autres. Le projet est abandonné, l'affaire est révélée par Reuters en octobre 2018.
 - Retirer la variable sensible ne suffit pas, c'est exactement ce que la salle a fait avec la nationalité et le code postal dans le piège.
 
-### 2020 : A-levels (classe sociale)
+### 2020 : A-levels (classe sociale) - Elise
 
 Mécanisme : correlation <> causation (modèle). 
 
@@ -220,14 +220,14 @@ Le niveau 3 ne fait pas disparaître le problème : même encadré, le modèle o
 
 ### Quelques questions à vous poser (3 min)
 
-Une seule slide qui reprend les quatre exemples de fin sous forme de questions (survivants, Goodhart, corrélations fallacieuses, Simpson), plus deux questions générales.
-
 1. Sur quelles données du passé mon algo est-il entraîné, et qui en est absent ? (reproduction du passé, survivants)
 2. Quel critère j'optimise, et qui l'a choisi ? (Goodhart)
 3. Ce résultat n'est-il pas trop beau pour être vrai ? (spurious correlations)
 4. Le chiffre global tient-il quand je le découpe ? (Simpson)
 5. D'où vient la demande, et les parties prenantes peuvent-elles contester ou auditer ? (boîte noire)
 6. Est-ce que j'ai un regard statistique et citoyen, produit, et pas juste "belle techno" ?
+
+Et dans vos stages c'était comment ?
 
 ### Retour en 1935 : la cartographie radicale (3 min)
 
