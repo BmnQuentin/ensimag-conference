@@ -44,7 +44,7 @@ Aussi : correlation <> causation, le quartier servant de proxy de l'origine.
 
 - 1935-1940 : l'agence fédérale HOLC fait cartographier 239 villes en 4 classes de risque de crédit, de A ("best") à D ("hazardous", en rouge). La composition raciale du quartier pèse lourd dans la note.
 - La boucle : pas de prêt, donc pas d'investissement, donc le quartier se dégrade, donc la carte "avait raison". La prédiction fabrique ses propres données.
-- Interdit en 1968 (Fair Housing Act) donc après une trentaine d'années, mais les effets restent dans les données. Par exemple en 2016, la livraison Amazon Prime en un jour exclut des quartiers majoritairement noirs dans plusieurs villes, dont Roxbury à Boston, sans que l'origine soit une variable.
+- Interdit en 1968 (Fair Housing Act) donc après une trentaine d'années, mais les effets restent dans les données. Par exemple en 2016, la livraison Amazon Prime en un jour exclut des quartiers majoritairement noirs dans plusieurs villes, dont Roxbury à Boston, sans que l'origine soit une variable. Idem des problèmes de santé publique et qualité de l'air subsitent encore ce jour.
 
 ### Années 1970 : crash-tests (sexe)
 
@@ -72,6 +72,12 @@ Mécanisme : la boîte noire. Seul exemple où le problème n'est pas un biais m
 
 - L'association Droits des lycéens demande le code source en mars 2016. Après avis favorable de la CADA, le ministère envoie en octobre une vingtaine de pages imprimées, limitées au tirage au sort des licences en tension.
 - "Malicious compliance" : ce qui pose souci ici, c'est la boîte noire qui empêche l'auditabilité. Sans audit possible, aucun des biais précédents ne peut être détecté.
+- Des règles discutables et opaques sont trovuées, et un manque de base légale.
+   - En octobre 2016 le code reçu est partiel. Le document d'une vingtaine de pages ne porte que sur le classement aléatoire des formations non sélectives. Les devs jugent qu'il ne permettait pas de comprendre l'algorithme.
+   - Le tirage au sort dans les licences en tension (STAPS, PACES, etc.) n'avait aucune base légale. Une circulaire l'a rendu officiel en avril 2017. Le Conseil d'État ne l'a pas suspendue, mais n'a pas jugé le fond.
+   - La CNIL a mis le ministère en demeure (décision du 30 août 2017, rendue publique le 28 septembre). Le motif : manque de transparence et prise de décision automatisée sans information des candidats.
+   - La Cour des comptes a épinglé APB dans un rapport du 19 octobre 2017. Elle critique une procédure peu compréhensible et sans cadre juridique. La ministre a alors annoncé l'ouverture du code et des données, puis APB a été remplacé par Parcoursup en 2018.
+
 
 ### 2018 : Amazon et les CV (sexe) - Elise
 
@@ -93,7 +99,7 @@ Mécanisme : correlation <> causation (modèle).
 
 ### 2024 : des modèles de langage trient les CV (origine, sexe)
 
-Mécanisme : le dataset d'entraînement. C'est Amazon en 2018, mais avec des modèles généralistes que n'importe quelle entreprise peut brancher sur son logiciel de recrutement (ATS).
+Mécanisme : souci dans le dataset d'entraînement. C'est Amazon en 2018, mais avec des modèles généralistes que n'importe quelle entreprise peut brancher sur son logiciel de recrutement (ATS).
 
 - Kyra Wilson et Aylin Caliskan (Université de Washington) prennent plus de 500 CV et 500 offres d'emploi réels, sur neuf métiers. Seul le prénom change : 120 prénoms associés à des hommes, des femmes, des personnes noires ou blanches. Plus de 3 millions de comparaisons.
 - Les prénoms associés aux personnes blanches sont préférés dans 85 % des cas, les prénoms féminins dans 11 % seulement. Les hommes noirs sont désavantagés dans jusqu'à 100 % des cas.
@@ -108,7 +114,7 @@ Mécanisme : le dataset d'entraînement. C'est Amazon en 2018, mais avec des mod
 - Assistants, Université de Limerick, relayé par Euronews en octobre 2026. 189 participants travaillent en réalité virtuelle avec deux avatars, Johan et Johanna, qui utilisent le même modèle (GPT-4). Payés en argent réel, ils donnent environ 10 % de moins à Johanna, tout en affirmant en entretien qu'ils ne feraient aucune différence. Ici ce n'est pas l'IA qui discrimine, ce sont ses utilisateurs ; le titre d'Euronews ("payés") est trompeur, il s'agit d'une somme versée dans une expérience.
 - Point important : ces modèles n'ont été entraînés ni à recruter, ni à conseiller des salaires, ni à résumer des dossiers sociaux. Ils ont appris sur le web et ressortent ses associations dans des usages pour lesquels ils n'ont pas été conçus.
 
-### En résumé
+### En résumé (5min)
 
 ### Et la CAF ? (précarité, handicap, parents isolés) : la boucle se referme
 
@@ -122,16 +128,16 @@ Mécanisme : presque tous.
 - boîte noire : code inaccessible jusqu'à l'action de La Quadrature du Net en 2023, publié par la CAF en 2026.
 - Le score est calibré sur les résultats des contrôles passés. Plus de contrôles sur certains profils, donc plus d'indus trouvés chez eux, donc le modèle est "confirmé". Même boucle que le redlining, 90 ans plus tard.
 
-## 3. Comment cela se retrouve dans nos expériences (35 min)
+## 3. Comment cela se retrouve dans nos expériences (10 min)
 
-### Élise (~15 min)
+### Élise (~5 min)
 
 - Travail dans une PME (domaine smart city) sur un projet d'optimisation du positionnement de bennes de tri sélectif dans une ville.
 - Explication des différentes phases du projet : récolte des données, préparation, stratégie d'analyse, clustering, modèle prédictif, carte de chaleur pour identifier des lieux où déplacer des bennes, expérimentation, rapport
 - Questionnements sur l'utilité par rapport aux limites du modèle (R² de 50% : TB pour un modèle sur des comportements, mauvais pour faire des propositions pertinentes) et à la meilleure connaissance des éboueurs sur le terrain
 - On juge la qualité d'un modèle sur le critère qu'on a décidé d'optimiser, mais est-ce toujours le bon critère ?
 
-### Quentin (~15 min)
+### Quentin (~5 min)
 
 1. Majeure BTP, cycles de dumpers : gains d'efficacité et de sécurité. "Si le chantier va plus vite et est optimisé, c'est forcément meilleur pour la planète non ?"
    - Effet rebond (paradoxe de Jevons), impact social, compréhension du terrain.
@@ -144,7 +150,7 @@ Mécanisme : presque tous.
 
 A voir ensemble 
 
-## 5. Débat mouvant (20 min)
+## 5. Débat mouvant si on a le temps (20 min)
 
 Chacun se positionne à gauche (d'accord) ou à droite (pas d'accord) de la salle, puis certains expliquent leur positionnement.
 
@@ -195,9 +201,9 @@ C'est encore "correlation <> causation" de la grille, sous sa forme la plus pié
 - Lien avec la séance : aucun de nos neuf exemples n'est à proprement parler un paradoxe de Simpson. Le plus proche est le tableau de l'atelier : dans chaque classe de score, le taux d'indu est le même pour A et B, mais les taux globaux diffèrent (23 % contre 43 %), uniquement à cause de la répartition dans les classes. Les A-levels en sont un cousin : la distribution nationale est juste, les notes individuelles ne le sont pas.
 - A retenir : avant de conclure sur un chiffre agrégé, se demander par quoi il faudrait le découper.
 
-## 7. Conclusion (15 min)
+## 7. Conclusion (10 min)
 
-### Et par rapport à l'algo de la CNAF (5 min)
+### Et par rapport à l'algo de la CNAF
 
 Réafficher leur liste de variables du début. "Qu'est-ce que vous changeriez ? Les variables, la cible, ou la question posée ?"
 
@@ -218,7 +224,7 @@ Laisser répondre, puis donner les trois niveaux, du plus radical au plus pragma
 
 Le niveau 3 ne fait pas disparaître le problème : même encadré, le modèle oblige à choisir entre plusieurs définitions de l'équité, c'est ce qu'a montré l'atelier.
 
-### Quelques questions à vous poser (3 min)
+### Quelques questions à vous poser
 
 1. Sur quelles données du passé mon algo est-il entraîné, et qui en est absent ? (reproduction du passé, survivants)
 2. Quel critère j'optimise, et qui l'a choisi ? (Goodhart)
@@ -229,33 +235,26 @@ Le niveau 3 ne fait pas disparaître le problème : même encadré, le modèle o
 
 Et dans vos stages c'était comment ?
 
-### Retour en 1935 : la cartographie radicale (3 min)
-
-Slide avant "Où et comment agir". On revient à la première carte de la séance pour montrer que les mêmes outils peuvent servir à l'inverse.
-
-- 1968-1971 : à Detroit, le géographe William Bunge et la Detroit Geographical Expedition font cartographier la ville par ses habitants, dans les quartiers noirs. Ils produisent des cartes que personne d'autre ne faisait, comme celle des enfants noirs renversés par les automobilistes qui traversent leur quartier pour rejoindre les banlieues aisées. Livre : *Fitzgerald: Geography of a Revolution* (1971).
-- 2016 : l'Université de Richmond numérise et publie les cartes de redlining (Mapping Inequality). Les mêmes cartes servent aujourd'hui à mesurer les effets du redlining sur la santé, les températures urbaines ou le patrimoine.
-- A retenir : qui choisit ce qu'on mesure choisit ce qu'on voit. Transition vers "Où et comment agir".
-
-### Où et comment agir (5 min)
-
-L'objectif n'est pas de dégoûter du métier, mais de détricoter l'idée d'algorithme neutre. Dans chaque exemple, quelqu'un de technique a levé le drapeau :
-
-- St George's : deux enseignants de l'école.
-- Gender Shades : une doctorante, Joy Buolamwini, mesure 0,8 % d'erreur sur les hommes à peau claire contre 34,7 % sur les femmes à peau foncée. IBM annonce en 2020 l'arrêt de sa reconnaissance faciale généraliste.
-- A-levels : retrait de l'algorithme 4 jours après les résultats.
-- CAF : code publié et variables retirées en 2026.
-
-Où agir : Data for Good, Eclaireur Public, Biolit, Pyronear, La Quadrature du Net, le Shift. Importance de ne pas "subir la data".
-
 Deux réflexes de métier :
 
 - Commencer par une baseline simple : reproductible, sobre, explicable. On complexifie si le besoin est avéré.
 - Impliquer les parties prenantes au plus tôt. A une époque où coder devient plus simple, c'est le regard produit qui fait la différence.
 
+### Où et comment agir, l'exemple DataForGood (10 min)
+
+L'objectif n'est pas de dégoûter du métier, mais de détricoter l'idée d'algorithme neutre. 
+
+Dans chaque exemple qui a été donné, quelqu'un, de technique ou pas, a lancé l'alerte (et dans tous les cas la tech a été impliquée)
+
+Où agir : quelques exemples
+
 ### Merci, des questions ?
 
-### MISC
+---
+
+# Autres
+
+## MISC
 
 - Corrélation contre causalité : pour prédire, une corrélation suffit, et c'est pour ça que le modèle "marche". Le problème commence quand on décide : contrôler, refuser, noter quelqu'un, c'est traiter la corrélation comme une propriété de la personne. Prédire n'est pas décider.
 - Aucun de ces mécanismes n'est une erreur de calcul. Et même en les corrigeant tous, il reste un choix de valeurs entre définitions de l'équité : c'est l'objet de l'atelier. Ne pas laisser croire qu'il "suffit de faire de la bonne stat".
@@ -264,3 +263,11 @@ Autres exemples
 - Santé, USA, 2019 (origine) : un algorithme hospitalier prédit les dépenses comme proxy des besoins de soin. Comme on dépense moins pour les patients noirs à état de santé égal, il les juge en meilleure santé. Corriger le proxy ferait passer leur part dans le programme d'accompagnement de 17,7 % à 46,5 %. Echo direct au "est-ce le bon critère ?" d'Elise.
 - COMPAS, USA, 2016 (origine, justice) : score de risque de récidive utilisé par des juges. Enquête ProPublica : parmi les personnes qui n'ont pas récidivé, 45 % des Noirs avaient été classés à haut risque contre 23 % des Blancs. L'origine n'est pas une variable d'entrée, mais les arrestations passées, le quartier ou l'emploi en sont des proxys. C'est le cas réel derrière le temps 1 de l'atelier.
 - Gender Shades, 2018 (sexe + couleur de peau) : trois logiciels commerciaux de classification de genre, 0,8 % d'erreur sur les hommes à peau claire contre 34,7 % sur les femmes à peau foncée, par sous-représentation dans les données d'entraînement. Aussi cité en conclusion.
+
+## Retour en 1935 : la cartographie radicale (3 min)
+
+Slide avant "Où et comment agir". On revient à la première carte de la séance pour montrer que les mêmes outils peuvent servir à l'inverse.
+
+- 1968-1971 : à Detroit, le géographe William Bunge et la Detroit Geographical Expedition font cartographier la ville par ses habitants, dans les quartiers noirs. Ils produisent des cartes que personne d'autre ne faisait, comme celle des enfants noirs renversés par les automobilistes qui traversent leur quartier pour rejoindre les banlieues aisées. Livre : *Fitzgerald: Geography of a Revolution* (1971).
+- 2016 : l'Université de Richmond numérise et publie les cartes de redlining (Mapping Inequality). Les mêmes cartes servent aujourd'hui à mesurer les effets du redlining sur la santé, les températures urbaines ou le patrimoine.
+- A retenir : qui choisit ce qu'on mesure choisit ce qu'on voit. Transition vers "Où et comment agir".

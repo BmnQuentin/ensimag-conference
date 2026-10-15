@@ -45,14 +45,16 @@ Vous êtes data scientist à la CNAF :
 
 Donne à chaque foyer un score recalculé chaque mois.
 
-10 variables retenues parmi 1000 informations
+10 variables retenues parmi 1000. Celles qui font monter le score (version 2010-2018) :
 
-Ce qui fait monter le score (versions 2010-2018) :
+<div class="fragment">
 
-- faibles revenus, chômage, RSA <!-- .element: class="fragment" -->
-- handicap (AAH), surtout avec un emploi <!-- .element: class="fragment" -->
-- parent isolé <!-- .element: class="fragment" -->
-- quartier défavorisé <!-- .element: class="fragment" -->
+- faibles revenus, chômage, RSA
+- handicap (AAH), surtout avec un emploi
+- parent isolé
+- quartier défavorisé
+
+</div>
 
 <small>Sources : La Quadrature du Net (2023), Le Monde (2023), Amnesty (2024)</small>
 
@@ -60,11 +62,17 @@ Ce qui fait monter le score (versions 2010-2018) :
 
 ## Fraude ou erreur ?
 
+<!-- .slide: class="img-right" -->
+
+![Impots](pictures/impot.jpg)
+
 Le modèle prédit les **trop-perçus**, pas la fraude
 
-On se trompe là où les règles sont compliquées <!-- .element: class="fragment" -->
+On se trompe là où les règles sont compliquées (les erreurs vont dans les deux sens, et l'exemple AAH va dans ce sens) <!-- .element: class="fragment" -->
 
 Le score ne voit pas l'intention : il mesure surtout l'exposition à des règles complexes <!-- .element: class="fragment" -->
+
+Le code postal peut ici être vu comme un proxy vers des variables plus problématiques <!-- .element: class="fragment" -->
 
 ---
 
@@ -90,6 +98,9 @@ Pas de prêt -> pas d'investissement -> le quartier se dégrade -> la carte "ava
 
 On retrouve la notion de proxy <!-- .element: class="fragment" -->
 
+Les effets subsistent encore à ce jour (livraisons, santé, ...) <!-- .element: class="fragment" -->
+
+
 <small>Source : Mapping Inequality, Université de Richmond</small>
 
 ---
@@ -106,7 +117,9 @@ Mannequin de référence = l'homme "moyen" <!-- .element: class="fragment" -->
 
 Conductrices : risque de blessure grave +47% <!-- .element: class="fragment" -->
 
-Biais dans l'échantillon statistique, avec lien sur le modèle physique. Se retrouve encore par exemple dans la pharmacologie (eg somnifère Zolpidem). <!-- .element: class="fragment" -->
+Biais dans l'échantillon statistique, avec lien sur le modèle physique. <!-- .element: class="fragment" -->
+
+Ce type de biais se retrouve encore par exemple dans la pharmacologie moderne (eg somnifère Zolpidem). <!-- .element: class="fragment" -->
 
 <small>Source : Bose et al., American Journal of Public Health, 2011</small>
 
@@ -120,11 +133,11 @@ Biais dans l'échantillon statistique, avec lien sur le modèle physique. Se ret
 
 La reproduction du passé <!-- .element: class="tag" -->
 
-Programme écrit pour imiter jury d'admission : jusqu'à 95 % de corrélation. Peut-on en déduire que c'étais satisfaisant ? <!-- .element: class="fragment" -->
+Programme écrit par un enseignant pour imiter jury d'admission : jusqu'à 95 % de corrélation. Peut-on en déduire que c'était satisfaisant ? <!-- .element: class="fragment" -->
 
-L'algo pénalise les femmes et les noms non européens, comme le jury <!-- .element: class="fragment" -->
+En 1982, toute la présélection est faite par ordinateur. <!-- .element: class="fragment" -->
 
-Jusqu'à 60 candidats écartés par an <!-- .element: class="fragment" -->
+L'algo pénalise les femmes et les noms non européens, comme le jury le faisait, avec jusqu'à 60 candidats écartés par an <!-- .element: class="fragment" -->
 
 Fin de l'algo en 1988, 9 ans après, jugement pour discrimination <!-- .element: class="fragment" -->
 
@@ -142,11 +155,15 @@ Fin de l'algo en 1988, 9 ans après, jugement pour discrimination <!-- .element:
 
 La boîte noire <!-- .element: class="tag" -->
 
-Mars : association de lycéens demande le code source <!-- .element: class="fragment" -->
+Ancêtre de Parcoursup <!-- .element: class="fragment" -->
 
-Octobre : après des mois de bataille judiciaire, le code est envoyé imprimé par la poste, sur papier : cas de "malicious compliance" <!-- .element: class="fragment" -->
+En mars 2016 : association de lycéens demande le code source <!-- .element: class="fragment" -->
 
-Pas d'audit, pas de biais détectable <!-- .element: class="fragment" -->
+En octobre, après des mois de bataille judiciaire, le code (partiel !) est envoyé imprimé par la poste, sur papier : cas de "malicious compliance" <!-- .element: class="fragment" -->
+
+Sans code source, pas d'audit, et pas de biais détectable <!-- .element: class="fragment" -->
+
+Mise en demeure de l'État par la CNIL (épinglé pour procédure sans cadre juridique) <!-- .element: class="fragment" -->
 
 <small>Sources : Next, L'Etudiant EducPros, 2016</small>
 
@@ -164,7 +181,7 @@ Outil de tri entraîné sur 10 ans de CV reçus, surtout masculins <!-- .element
 
 Le genre n'est pas une variable... <!-- .element: class="fragment" -->
 
-...mais le mot "women's" (ex : women's chess club)dans un CV fait baisser la note <!-- .element: class="fragment" -->
+...mais le mot "women's" (ex : women's chess club) dans un CV fait baisser la note <!-- .element: class="fragment" -->
 
 Il s'agit encore une fois d'un proxy, neutralisé mais comment s'assurer que le modèle n'en utilisera pas d'autres ? <!-- .element: class="fragment" -->
 
@@ -210,6 +227,9 @@ Prénoms féminins préférés dans 11 % des cas <!-- .element: class="fragment"
 
 Hommes noirs : désavantagés dans jusqu'à 100 % des cas <!-- .element: class="fragment" -->
 
+Pas un "algo entraîné à recruter" mais un apprentissage non supervisé entraîné sur les données du web... <!-- .element: class="fragment" -->
+
+
 <small>Source : Wilson & Caliskan, Université de Washington, 2024</small>
 
 ---
@@ -220,13 +240,13 @@ Hommes noirs : désavantagés dans jusqu'à 100 % des cas <!-- .element: class="
 
 ![Deux CV identiques, seul le prénom change](pictures/genai-bias.jpg)
 
-Racisme caché : un texte en anglais afro-américain, et le modèle propose des emplois moins prestigieux et plus de condamnations à mort (Nature, 2024) <!-- .element: class="fragment" -->
+Pour un texte en anglais standard vs afro-américain, le modèle propose des emplois moins prestigieux et plus de condamnations à mort (Nature, 2024) <!-- .element: class="fragment" -->
 
-Salaire : à profil identique, les chatbots conseillent aux femmes de demander moins (THWS, 2025) <!-- .element: class="fragment" -->
+À profil identique, les chatbots conseillent aux femmes de demander moins (THWS, 2025) <!-- .element: class="fragment" -->
 
-Santé : des résumés de dossiers d'aide sociale minimisent les besoins des femmes (LSE, 2025) <!-- .element: class="fragment" -->
+Un outil utilisé par plus de 50% des villes anglaises résume les dossiers d'aide sociale et minimise le plus souvent les besoins des femmes (LSE, 2025) <!-- .element: class="fragment" -->
 
-Assistants : à IA identique, l'avatar féminin est rémunéré 10 % de moins par les utilisateurs (Limerick, 2026) <!-- .element: class="fragment" -->
+La semaine dernière : à IA identique, l'avatar féminin est rémunéré 10 % de moins par les utilisateurs (Limerick, 2026) <!-- .element: class="fragment" -->
 
 <small>Sources : Hofmann et al., Nature ; HR Dive ; THWS ; LSE ; Université de Limerick via Euronews</small>
 
@@ -275,7 +295,7 @@ Elle en cumule beaucoup !
 
 - Entreprise majeure du BTP : optimisation de cycles de grue et de tombereaux. Si on optimise ça doit être mieux ? <!-- .element: class="fragment" -->
 - Startup de traitement de données géospatiales : from massification de la rénovation énergétique to pricing assurance <!-- .element: class="fragment" -->
-- Coopérative data pour projets public : drivé par l'impact <!-- .element: class="fragment" -->
+- Coopérative data pour projets public : conduit par l'impact <!-- .element: class="fragment" -->
 
 ---
 
@@ -287,13 +307,16 @@ On vous propose de dé/reconstruire des algorithmes, et de réfléchir à qui a 
 
 ## Les cas d’étude
 
-- Albert : Système d’IA générative pour trouver des réponses à des questions administratives
-
-- CNAF - Data mining données entrantes : Système de score de risque pour prioriser les contrôles des allocataires
-
-- Vidéosurveillance algorithmique : Traitement d’images vidéo en temps réel pour identifier et suivre de manière automatisée un individu
+<!-- .slide: class="img-right" -->
 
 ![cas-detude-atelier](pictures/cas-detude-atelier.png)
+
+**Albert** : Système d’IA générative pour trouver des réponses à des questions administratives
+
+**CNAF** : Data mining données entrantes, système de score de risque pour prioriser les contrôles des allocataires
+
+**Vidéosurveillance algorithmique** : Traitement d’images vidéo en temps réel pour identifier et suivre de manière automatisée un individu
+
 
 ---
 
@@ -306,15 +329,13 @@ Comment l’influence-t-il ? Comment est-il impacté ?
 
 ## Fiche acteur
 
-**Type d’acteur**
-Une explication associée
+**Type d’acteur** - Une explication associée
 
-**Influence de l’acteur**
-On entend par influence la capacité de l’acteur à orienter 
+**Influence de l’acteur** - On entend par influence la capacité de l’acteur à orienter 
 la conception de l’algorithme, que ce soit dans son fonctionnement ou dans son existence même. 
 
-**Impacts sur l’acteur**
-On entend par impact tout effet positif ou négatif que l’algorithme peut avoir sur la structure. 
+**Impacts sur l’acteur** - On entend par impact tout effet positif ou négatif que l’algorithme peut avoir sur la structure. 
+
 *Par exemple : l’algorithme peut-il avoir une conséquence sur la vie d’un administré ? Sur les conditions de travail des agents publics ? Sur les politiques publiques menées par une administration ?*
 
 ---
@@ -336,30 +357,27 @@ Dans un monde idéal, quelle(s) forme(s) de gouvernance mettre en place pour per
 
 ## Fiche gouvernance
 
-**Acteur**
-Choisir un acteur sur lequel vous souhaitez vous concentrer
+**Acteur** - Choisir un acteur sur lequel vous souhaitez vous concentrer
 
-**Influence**
-Définissez le type d’influence que l’acteur devrait avoir
+**Influence** - Définissez le type d’influence que l’acteur devrait avoir
 
-**Modalité de gouvernance**
-Quelle(s) solution(s) envisager pour permettre à l’acteur de participer à la prise de décision sur le système algorithmique et d’accroître son influence dessus ?
+**Modalité de gouvernance** - Quelle(s) solution(s) envisager pour permettre à l’acteur de participer à la prise de décision sur le système algorithmique et d’accroître son influence dessus ?
+
 *Vous êtes libres dans les solutions que vous envisagez : cela peut se situer au niveau des interfaces existants pour interagir avec l’algorithme, peut être une proposition de création d’un collectif d’audit citoyen, la création d’une loi pour interdire ou rendre obligatoire certaines pratiques…*
 
 ---
 
 ## Débat mouvant
 
-D'accord : à gauche
+D'accord : à gauche / pas d'accord : à droite
 
-Pas d'accord : à droite
+Je suis personnellement responsable si le travail qu'on me demande a un fort risque de biais discriminatoires. <!-- .element: class="fragment" -->
 
-Je suis personnellement responsable si le travail qu'on me demande a un fort risque de biais discriminatoires.
-Les algorithmes utilisés dans des domaines critiques (santé, justice, finance) doivent être open source pour permettre leur audit.
+Les algorithmes utilisés dans des domaines critiques (santé, justice, finance) doivent être open source pour permettre leur audit. <!-- .element: class="fragment" -->
 
 ---
 
-# Et pour finir, quelques réflexes à adopter, par les exemples
+# Et pour finir quelques réflexes à adopter, par les exemples
 
 ---
 
@@ -430,11 +448,65 @@ Pas de réponse générale hélas mais quelques pistes : <!-- .element: class="f
 ## Quelques questions à vous poser
 
 1. Sur quelles données du passé mon algo est-il entraîné, et qui en est absent ? <!-- .element: class="fragment" -->
-2. Quel critère j'optimise, et qui l'a choisi ? <!-- .element: class="fragment" -->
+2. Quel critère j'optimise, et qui l'a choisi, à quoi servira-t-il ? <!-- .element: class="fragment" -->
 3. Ce résultat n'est-il pas trop beau pour être vrai ? <!-- .element: class="fragment" -->
 4. Le chiffre global tient-il quand je le découpe ? <!-- .element: class="fragment" -->
 5. D'où vient la demande, et les parties prenantes peuvent-elles contester ou auditer ? <!-- .element: class="fragment" -->
 6. Est-ce que j'ai un regard critique, statistique et citoyen, produit, et pas juste "belle techno" ? <!-- .element: class="fragment" -->
+
+---
+
+## Où et comment agir
+
+Dans des assos : 
+- Data for Good
+- La Quadrature du Net
+- The Shift Project
+
+Mais surtout en faisant bien votre métier au quotidien <!-- .element: class="fragment" -->
+
+
+---
+
+## Petit focus Data for Good : quelques exemples de projets
+
+---
+
+### Biolit
+
+<!-- .slide: class="img-right" -->
+
+![biolit](pictures/biolit.png)
+
+Améliorer l’analyse des informations récoltées par les citoyen·nes pour mieux surveiller la biodiversité du littoral français en :
+- Optimisant l’identification et la validation des observations
+- Améliorant le partage des données avec les partenaires
+- Valorisant les données via un tableau de bord
+
+2 modèles ML qui aident à traiter des photos d'espèces du littoral :
+- Le 1er pour détecter l'espèce dans la photo pour cropper autour d'elle
+- Avant d'envoyer au 2e modèle qui se charge d'analyser l'image croppée pour identifier de quelle espèce il s'agit
+
+
+---
+
+## Petit focus Data for Good : quelques exemples de projets
+
+<!-- .slide: class="img-right" -->
+
+![pyronear](pictures/pyronear.png)
+
+**Pyronear**
+
+Solution open source de détection précoce des feux de forêt utilisant des stations de surveillance automatisées (images vidéo) pour alerter rapidement les pompiers
+
+---
+
+# Merci, des questions ?
+
+---
+
+# En plus 
 
 ---
 
@@ -453,44 +525,3 @@ Les mêmes outils peuvent aussi rendre visible
 > Qui choisit ce qu'on mesure choisit ce qu'on voit <!-- .element: class="fragment" -->
 
 <small>Sources : W. Bunge, Fitzgerald, 1971 ; Université de Richmond</small>
-
----
-
-## Où et comment agir
-
-Dans des assos : 
-- Data for Good
-- La Quadrature du Net
-- The Shift Project
-
-Mais surtout en faisant bien votre métier au quotidien <!-- .element: class="fragment" -->
-
-
----
-
-## Petit focus Data for Good : quelques exemples de projets
-
-**BioLit**
-Améliorer l’analyse des informations récoltées par les citoyen·nes pour mieux surveiller la biodiversité du littoral français en :
-- Optimisant l’identification et la validation des observations
-- Améliorant le partage des données avec les partenaires
-- Valorisant les données via un tableau de bord
-
-2 modèles ML qui aident à traiter des photos d'espèces du littoral :
-- le 1er pour détecter l'espèce dans la photo pour cropper autour d'elle
-- avant d'envoyer au 2e modèle qui se charge d'analyser l'image croppée pour identifier de quelle espèce il s'agit
-
-![biolit](pictures/biolit.png)
-
----
-
-## Petit focus Data for Good : quelques exemples de projets
-
-**Pyronear**
-Solution open source de détection précoce des feux de forêt utilisant des stations de surveillance automatisées (images vidéo) pour alerter rapidement les pompiers
-
-![pyronear](pictures/pyronear.png)
-
----
-
-# Merci, des questions ?

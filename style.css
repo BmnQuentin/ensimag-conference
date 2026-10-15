@@ -13,3 +13,9 @@
 
 /* Citation à côté d'une image flottante : rester dans la colonne de texte */
 .reveal section.img-right > blockquote { width: auto; margin: 20px 0; overflow: hidden; }
+
+/* Citation en fragment : masquer aussi le fond tant que le texte n'est pas apparu */
+.reveal blockquote:has(> .fragment:not(.visible)) { visibility: hidden; }
+
+/* Listes à côté d'une image flottante : rester dans la colonne de texte (le thème les met en inline-block) */
+.reveal section.img-right > ul, .reveal section.img-right > ol { display: block; }
