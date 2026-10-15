@@ -152,7 +152,7 @@ Pas d'audit, pas de biais détectable <!-- .element: class="fragment" -->
 
 ---
 
-## 2018 : Amazon et les CV
+## 2014-2017 : Amazon et les CV
 
 <!-- .slide: class="img-right" -->
 
@@ -297,6 +297,8 @@ On vous propose de dé/reconstruire des algorithmes, et de réfléchir à qui a 
 
 - Vidéosurveillance algorithmique : Traitement d’images vidéo en temps réel pour identifier et suivre de manière automatisée un individu
 
+![cas-detude-atelier](pictures/cas-detude-atelier.png)
+
 ---
 
 ## Temps 1 : cartographie d’acteurs
@@ -324,6 +326,15 @@ On entend par impact tout effet positif ou négatif que l’algorithme peut avoi
 ## Temps 2 : penser de nouvelles modalités de gouvernance
 
 Dans un monde idéal, quelle(s) forme(s) de gouvernance mettre en place pour permettre à plus d’acteurs d’avoir un poids dans la prise de décision ?
+
+---
+
+## Quelques initiatives inspirantes
+
+- **ACLU Massachusetts** : Community control over police surveillance
+- **Algorithme d’attribution de greffons de reins**
+- **Māori Algorithmic Sovereignty** : souveraineté algorithmique maorie
+
 
 ---
 
@@ -359,11 +370,6 @@ Je suis personnellement responsable si le travail qu'on me demande a un fort ris
 
 Les algorithmes utilisés dans des domaines critiques (santé, justice, finance) doivent être open source pour permettre leur audit.
 
----
-
-### Affirmation 3
-
-...
 
 ---
 
@@ -477,6 +483,27 @@ Mais surtout en faisant bien votre métier au quotidien <!-- .element: class="fr
 ---
 
 ## Petit focus Data for Good : quelques exemples de projets
+
+**BioLit**
+Améliorer l’analyse des informations récoltées par les citoyen·nes pour mieux surveiller la biodiversité du littoral français en :
+- Optimisant l’identification et la validation des observations
+- Améliorant le partage des données avec les partenaires
+- Valorisant les données via un tableau de bord
+
+2 modèles ML qui aident à traiter des photos d'espèces du littoral :
+- le 1er pour détecter l'espèce dans la photo pour cropper autour d'elle
+- avant d'envoyer au 2e modèle qui se charge d'analyser l'image croppée pour identifier de quelle espèce il s'agit
+
+![biolit](pictures/biolit.png)
+
+---
+
+## Petit focus Data for Good : quelques exemples de projets
+
+**Pyronear**
+Solution open source de détection précoce des feux de forêt utilisant des stations de surveillance automatisées (images vidéo) pour alerter rapidement les pompiers
+
+![pyronear](pictures/pyronear.png)
 
 ---
 
