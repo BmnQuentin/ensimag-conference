@@ -311,12 +311,6 @@ On vous propose de dé/reconstruire des algorithmes, et de réfléchir à qui a 
 
 ![cas-detude-atelier](pictures/cas-detude-atelier.png)
 
-**Albert** : Système d’IA générative pour trouver des réponses à des questions administratives
-
-**CNAF** : Data mining données entrantes, système de score de risque pour prioriser les contrôles des allocataires
-
-**Vidéosurveillance algorithmique** : Traitement d’images vidéo en temps réel pour identifier et suivre de manière automatisée un individu
-
 
 ---
 
