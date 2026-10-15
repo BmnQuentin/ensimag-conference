@@ -123,24 +123,12 @@
   - Kleinberg, Mullainathan, Raghavan, 2016 : https://arxiv.org/abs/1609.05807
   - Chouldechova, 2016 : https://arxiv.org/abs/1610.07524
 
-  ## Gender Shades
+## Gender Shades
 
 - Wikipédia (fr), "Joy Buolamwini" : https://fr.wikipedia.org/wiki/Joy_Buolamwini
 - Wikipédia (en), "Joy Buolamwini" (les chiffres et la réaction d'IBM) : https://en.wikipedia.org/wiki/Joy_Buolamwini
-
-## COMPAS (en réserve, en faire atelier ?)
-
-- Wikipédia (en), "COMPAS (software)" : https://en.wikipedia.org/wiki/COMPAS_(software)
-- Complément : ProPublica, "Machine Bias", 2016 (45 % contre 23 %) : https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing
 
 ## Algorithme de santé (Obermeyer, en réserve)
 
 - Wikipédia (en), "Algorithmic bias" : https://en.wikipedia.org/wiki/Algorithmic_bias
 - Complément : Obermeyer et al., *Science*, 2019 (17,7 % et 46,5 %) : https://doi.org/10.1126/science.aax2342
-## Crédits des images (Wikimedia Commons)
-
-- `pictures/caf.jpg` : "CAF (Caisse d'Allocations Familiales), Paris 15.JPG", Fabio Gargano, CC BY-SA 4.0 : https://commons.wikimedia.org/wiki/File:CAF_(Caisse_d%27Allocations_Familiales),_Paris_15.JPG
-- `pictures/crash-test-dummies.jpg` : "Hybrid-III 5th next to THOR-5F Crash Test Dummy.jpg", Human Crash Safety, CC BY-SA 4.0 : https://commons.wikimedia.org/wiki/File:Hybrid-III_5th_next_to_THOR-5F_Crash_Test_Dummy.jpg
-- `pictures/st-georges.jpg` : "St George's Hospital, Tooting - geograph.org.uk - 938157.jpg", Stephen Craven, CC BY-SA 2.0 : https://commons.wikimedia.org/wiki/File:St_George%27s_Hospital,_Tooting_-_geograph.org.uk_-_938157.jpg
-- `pictures/apb.jpg` : "Page d'accueil APB 2015.jpg", Jeremy77186, CC BY-SA 4.0 : https://commons.wikimedia.org/wiki/File:Page_d%27accueil_APB_2015.jpg
-- `pictures/amazon-spheres.jpg` : "Amazon Spheres 2018.jpg", Andy Li, CC0 : https://commons.wikimedia.org/wiki/File:Amazon_Spheres_2018.jpg

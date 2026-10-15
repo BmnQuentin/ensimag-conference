@@ -152,7 +152,7 @@ Chacun se positionne à gauche (d'accord) ou à droite (pas d'accord) de la sall
 - Affirmation 2 : "Les algorithmes utilisés dans des domaines critiques (santé, justice, finance) doivent être open source pour permettre leur audit."
 - Affirmation 3 : `[à compléter]`
 
-## 6. Et pour finir, quelques exemples (10 min)
+## 6. Et pour finir, quelques réflexes (10 min)
 
 Transition après le débat : "Quatre réflexes qui valent bien au-delà des algorithmes publics, quel que soit votre futur poste." Ce sont les versions générales de trois mécanismes vus en partie I.
 

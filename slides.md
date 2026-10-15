@@ -264,13 +264,9 @@ Elle en cumule beaucoup !
 ### Élise
 
 - Data scientist/analyst dans une PME pendant 2 ans sur des projets d'**optimisation de collectes de déchets**
-  
 - Projet **My City'Challenge** : optimisation du positionnement de bennes de tri sélectif dans une ville
-  
 - Travail sur les **différentes phases du projet** : récolte des données, préparation, stratégie d'analyse, clustering, modèle prédictif, carte de chaleur pour identifier des lieux où déplacer des bennes, expérimentation, rapport
-  
 - **Questionnements par rapport aux limites du modèle**
-  
 - On juge la qualité d'un modèle sur le critère qu'on a décidé d'optimiser, mais est-ce toujours le bon critère ?
   
 ---
@@ -358,22 +354,12 @@ D'accord : à gauche
 
 Pas d'accord : à droite
 
----
-
-### Affirmation 1
-
 Je suis personnellement responsable si le travail qu'on me demande a un fort risque de biais discriminatoires.
-
----
-
-### Affirmation 2
-
 Les algorithmes utilisés dans des domaines critiques (santé, justice, finance) doivent être open source pour permettre leur audit.
 
-
 ---
 
-# Et pour finir, quelques exemples
+# Et pour finir, quelques réflexes à adopter, par les exemples
 
 ---
 
