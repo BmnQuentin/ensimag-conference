@@ -363,7 +363,7 @@ Dans un monde idéal, quelle(s) forme(s) de gouvernance mettre en place pour per
 
 D'accord : à gauche / pas d'accord : à droite
 
-**Je suis personnellement responsable si le travail qu'on me demande a un fort risque de biais discriminatoires.** <!-- .element: class="fragment" -->
+**Je suis personnellement responsable si le travail qu'on me demande a un fort risque de biais discriminatoires.** 
 
 ---
 
@@ -371,7 +371,15 @@ D'accord : à gauche / pas d'accord : à droite
 
 D'accord : à gauche / pas d'accord : à droite
 
-**Les algorithmes utilisés dans des domaines critiques (santé, justice, finance) doivent être open source pour permettre leur audit.** <!-- .element: class="fragment" -->
+**Les algorithmes utilisés dans des domaines critiques (santé, justice, finance) doivent être open source pour permettre leur audit.**
+
+---
+
+## Débat mouvant
+
+D'accord : à gauche / pas d'accord : à droite
+
+**Il faut restreindre les entreprises dans leurs usages de l'IA qui ont un fort impact environnemental ?**
 
 ---
 
@@ -424,7 +432,7 @@ Taux d'admission en master, automne 1973
 | Toutes filières | 44 % | 35 % |
 | Filière A | 62 % (825 candidats) | 82 % (108 candidates) |
 | Filière B | 63 % (560) | 68 % (25) |
-| Filière F | 6 % (373) | 7 % (341) |
+| Filière C | 6 % (373) | 7 % (341) |
 
 > Un chiffre global peut dire l'inverse de chacune de ses parties
 
