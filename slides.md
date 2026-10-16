@@ -281,13 +281,13 @@ Elle en cumule beaucoup !
 
 ---
 
-### Élise
+### Elise
 
-- Data scientist/analyst dans une PME pendant 2 ans sur des projets d'**optimisation de collectes de déchets**
-- Projet **My City'Challenge** : optimisation du positionnement de bennes de tri sélectif dans une ville
-- Travail sur les **différentes phases du projet** : récolte des données, préparation, stratégie d'analyse, clustering, modèle prédictif, carte de chaleur pour identifier des lieux où déplacer des bennes, expérimentation, rapport
-- **Questionnements par rapport aux limites du modèle**
-- On juge la qualité d'un modèle sur le critère qu'on a décidé d'optimiser, mais est-ce toujours le bon critère ?
+- Data scientist/analyst dans une PME pendant 2 ans sur des projets d'**optimisation de collectes de déchets** <!-- .element: class="fragment" -->
+- Projet **My City'Challenge** : optimisation du positionnement de bennes de tri sélectif dans une ville <!-- .element: class="fragment" -->
+- Travail sur les **différentes phases du projet** : récolte des données, préparation, stratégie d'analyse, clustering, modèle prédictif, carte de chaleur pour identifier des lieux où déplacer des bennes, expérimentation, rapport <!-- .element: class="fragment" -->
+- **Questionnements par rapport aux limites du modèle** <!-- .element: class="fragment" -->
+- On juge la qualité d'un modèle sur le critère qu'on a décidé d'optimiser, mais est-ce toujours le bon critère ? <!-- .element: class="fragment" -->
   
 ---
 
@@ -340,9 +340,9 @@ Dans un monde idéal, quelle(s) forme(s) de gouvernance mettre en place pour per
 
 ## Quelques initiatives inspirantes
 
-- **ACLU Massachusetts** : Community control over police surveillance
-- **Algorithme d’attribution de greffons de reins**
-- **Māori Algorithmic Sovereignty** : souveraineté algorithmique maorie
+- **ACLU Massachusetts** : Community control over police surveillance <!-- .element: class="fragment" -->
+- **Algorithme d’attribution de greffons de reins** <!-- .element: class="fragment" -->
+- **Māori Algorithmic Sovereignty** : souveraineté algorithmique maorie <!-- .element: class="fragment" -->
 
 
 ---
@@ -363,9 +363,15 @@ Dans un monde idéal, quelle(s) forme(s) de gouvernance mettre en place pour per
 
 D'accord : à gauche / pas d'accord : à droite
 
-Je suis personnellement responsable si le travail qu'on me demande a un fort risque de biais discriminatoires. <!-- .element: class="fragment" -->
+**Je suis personnellement responsable si le travail qu'on me demande a un fort risque de biais discriminatoires.** <!-- .element: class="fragment" -->
 
-Les algorithmes utilisés dans des domaines critiques (santé, justice, finance) doivent être open source pour permettre leur audit. <!-- .element: class="fragment" -->
+---
+
+## Débat mouvant
+
+D'accord : à gauche / pas d'accord : à droite
+
+**Les algorithmes utilisés dans des domaines critiques (santé, justice, finance) doivent être open source pour permettre leur audit.** <!-- .element: class="fragment" -->
 
 ---
 
@@ -475,9 +481,9 @@ Améliorer l’analyse des informations récoltées par les citoyen·nes pour mi
 - Améliorant le partage des données avec les partenaires
 - Valorisant les données via un tableau de bord
 
-2 modèles ML qui aident à traiter des photos d'espèces du littoral :
-- Le 1er pour détecter l'espèce dans la photo pour cropper autour d'elle
-- Avant d'envoyer au 2e modèle qui se charge d'analyser l'image croppée pour identifier de quelle espèce il s'agit
+2 modèles ML qui aident à traiter des photos d'espèces du littoral :  <!-- .element: class="fragment" -->
+- Le 1er pour détecter l'espèce dans la photo pour cropper autour d'elle  <!-- .element: class="fragment" -->
+- Avant d'envoyer au 2e modèle qui se charge d'analyser l'image croppée pour identifier de quelle espèce il s'agit  <!-- .element: class="fragment" -->
 
 
 ---
@@ -491,6 +497,23 @@ Améliorer l’analyse des informations récoltées par les citoyen·nes pour mi
 **Pyronear**
 
 Solution open source de détection précoce des feux de forêt utilisant des stations de surveillance automatisées (images vidéo) pour alerter rapidement les pompiers
+
+---
+
+## Rejoindre Data for Good 
+
+https://dataforgood.fr/
+
+![sited4g](pictures/sited4g.png)
+
+---
+
+## D4G : Prochaine saison avec 12 projets autour de la démocratie
+
+A partir du 7 novembre
+
+![saison15d4g](pictures/saison15d4g.png)
+
 
 ---
 
