@@ -4,12 +4,13 @@
 
 ### Pour commencer / Choisissez 5 variables (5 min)
 
-"Vous êtes data scientist à la CNAF. Chaque mois, 13,8 millions de foyers reçoivent une prestation. Vous avez environ 700 contrôleurs pour les contrôles sur place (chiffre de presse, à recouper). Votre mission : choisir les dossiers à contrôler pour récupérer le plus possible d'argent versé à tort."
+Vous êtes data scientist à la CNAF (Caisse nationale des allocations familiales). Chaque mois, 13,8 millions de foyers reçoivent une prestation. Vous avez environ 700 contrôleurs pour les contrôles sur place (chiffre de presse, à recouper). Votre mission : choisir les dossiers à contrôler pour récupérer le plus possible d'argent versé à tort.
 
 ### Ce modèle existe vraiment
 
 - Le score existe depuis le début des années 2010. Il note chaque foyer entre 0 et 1, chaque mois : plus de 13 millions de scores, portant sur 32 millions de personnes.
 - Quelques dizaines de variables, retenues après un apprentissage sur plus de 1 000 informations par allocataire.
+- Code fermé au début
 - La Quadrature du Net a obtenu le code source des versions 2010-2018. Ce qui fait monter le score : faibles revenus, chômage, RSA, handicap (AAH, surtout avec un emploi), parent isolé (des femmes dans 80 % des cas), quartier défavorisé.
 - L'exemple de l'AAH (allocation aux adultes handicapés) : sans emploi, l'allocataire déclare ses ressources une fois par an et son allocation est stable. Avec un emploi en milieu ordinaire, il passe à une déclaration tous les trois mois ("AAH trimestrialisée") et l'allocation est recalculée à chaque fois. Plus de déclarations et des revenus qui bougent, donc plus d'erreurs, donc plus de trop-perçus dans les données passées, donc un score élevé. La personne handicapée qui travaille est davantage contrôlée parce que sa règle est plus compliquée.
 
@@ -42,8 +43,10 @@ Mécanisme de prophétie auto-réalisatrice.
 
 Aussi : correlation <> causation, le quartier servant de proxy de l'origine.
 
+- Objectif attribution de prêts immobiliers abordables qui a accéléré le déclin des centre villes
 - 1935-1940 : l'agence fédérale HOLC fait cartographier 239 villes en 4 classes de risque de crédit, de A ("best") à D ("hazardous", en rouge). La composition raciale du quartier pèse lourd dans la note.
 - La boucle : pas de prêt, donc pas d'investissement, donc le quartier se dégrade, donc la carte "avait raison". La prédiction fabrique ses propres données.
+- Entre 1945 et 1959, les Afro-Américains ont reçu moins de 2 % de tous les prêts immobiliers assurés par le gouvernement fédéral
 - Interdit en 1968 (Fair Housing Act) donc après une trentaine d'années, mais les effets restent dans les données. Par exemple en 2016, la livraison Amazon Prime en un jour exclut des quartiers majoritairement noirs dans plusieurs villes, dont Roxbury à Boston, sans que l'origine soit une variable. Idem des problèmes de santé publique et qualité de l'air subsitent encore ce jour.
 
 ### Années 1970 : crash-tests (sexe)
@@ -52,15 +55,16 @@ Mécanisme : le dataset d'entraînement.
 
 - Les tests reposent historiquement sur un mannequin d'homme "moyen", mis au point dans les années 1970.
 - Sur les accidents réels aux USA entre 1998 et 2008, une conductrice ceinturée a un risque de blessure grave supérieur de 47 % à celui d'un conducteur dans un accident comparable
-- Ici ce qui fait office de "dataset", c'est le modèle physique utilisé au départ lui même lui-même.
+- Aujourd'hui encore les tests prévoient un mannequin plus typé "masculin" (taille, poids, morphologie, et même conception globale de la voiture)
+- Ici ce qui fait office de "dataset", c'est le modèle physique utilisé au départ lui même lui-même. Données d'entrée parcellaires qui font que inadapté à une partie de la population.
 
-A noter que cela se retrouve en pharma, exemple : Le somnifère zolpidem :en janvier 2013, l’agence américaine du médicament (FDA) a divisé par deux la dose recommandée pour les femmes, de 10 mg à 5 mg. Elles éliminent la molécule plus lentement, ce qui laissait un effet résiduel le lendemain matin, notamment au volant. C’était 20 ans après sa mise sur le marché.
+A noter que cela se retrouve en pharma, exemple : le somnifère zolpidem :en janvier 2013, l’agence américaine du médicament (FDA) a divisé par deux la dose recommandée pour les femmes, de 10 mg à 5 mg. Elles éliminent la molécule plus lentement, ce qui laissait un effet résiduel le lendemain matin, notamment au volant. C’était 20 ans après sa mise sur le marché.
 
 ### 1979 : St George's, Londres (sexe + origine)
 
 Mécanisme : la reproduction du passé. C'est le cas le plus pur de biais humain intégré à l'algorithme.
 
-- Un enseignant écrit un programme pour présélectionner les candidatures. En 1979, il reproduit les notes du jury avec 90-95 % de corrélation. En 1982, toute la présélection est faite par ordinateur.
+- Un enseignant écrit un programme pour présélectionner les candidatures et rendre le processus d'admission moins pénible pour l'administration. En 1979, il reproduit les notes du jury avec 90-95 % de corrélation. En 1982, toute la présélection est faite par ordinateur.
 - Il retire des points aux femmes et aux noms à consonance non européenne, comme le jury le faisait. Jusqu'à 60 candidats sur 2 000 écartés chaque année pour ce seul motif.
 - Décembre 1986 : deux enseignants de l'école, A. Burke et J. Collier, alertent la Commission for Racial Equality, qui conclut en 1988 à une discrimination.
 - La phrase à citer, du British Medical Journal en 1988 : "the prejudice of a computer is no less than that of its designers".
@@ -99,7 +103,9 @@ Mécanisme : correlation <> causation (modèle).
 
 ### 2024 : des modèles de langage trient les CV (origine, sexe)
 
-Mécanisme : souci dans le dataset d'entraînement. C'est Amazon en 2018, mais avec des modèles généralistes que n'importe quelle entreprise peut brancher sur son logiciel de recrutement (ATS).
+ATS : Applicant Tracking System
+
+Mécanisme : souci dans le dataset d'entraînement. C'est comme Amazon en 2018, mais avec des modèles généralistes que n'importe quelle entreprise peut brancher sur son logiciel de recrutement (ATS).
 
 - Kyra Wilson et Aylin Caliskan (Université de Washington) prennent plus de 500 CV et 500 offres d'emploi réels, sur neuf métiers. Seul le prénom change : 120 prénoms associés à des hommes, des femmes, des personnes noires ou blanches. Plus de 3 millions de comparaisons.
 - Les prénoms associés aux personnes blanches sont préférés dans 85 % des cas, les prénoms féminins dans 11 % seulement. Les hommes noirs sont désavantagés dans jusqu'à 100 % des cas.
@@ -108,10 +114,16 @@ Mécanisme : souci dans le dataset d'entraînement. C'est Amazon en 2018, mais a
 
 ### 2024-2026 : l'IA générative, aux dernières nouvelles tout va bien
 
-- Racisme caché, *Nature*, septembre 2024 (Hofmann, Kalluri, Jurafsky, King). On soumet aux modèles le même contenu en anglais standard ou en anglais afro-américain. Pour le second, ils proposent des emplois moins prestigieux, condamnent plus souvent et proposent plus souvent la peine de mort. Interrogés directement sur les Afro-Américains, les mêmes modèles répondent de façon positive : l'alignement masque le biais sans le faire disparaître.
+- Racisme caché, *Nature*, septembre 2024 (Hofmann, Kalluri, Jurafsky, King, "AI generates covertly racist decisions about people based on dialect".
+  - Méthode : on donne au modèle un tweet en anglais afro-américain (AAE) ou sa traduction en anglais standard, environ 2 000 paires, et on lui demande de décrire l'auteur. La race n'est jamais mentionnée.
+  - 12 modèles testés
+  - Stéréotypes : pour l'AAE, les modèles sortent "ignorant", "lazy", "stupid", "dirty", "rude", "aggressive". C'est plus négatif que tous les stéréotypes humains mesurés dans les enquêtes, et le plus proche de ceux de 1933 (étude de Katz et Braly à Princeton). Interrogés directement sur les Afro-Américains, les mêmes modèles répondent "musical", "religious", "loyal".
+  - Emploi : l'AAE est associé à cuisinier, soldat, vigile, chanteur ; l'anglais standard à psychologue, professeur, économiste.
+  - Justice (procès fictif, seul le dialecte change) : écart de 5%. Condamnation dans 68,7 % des cas contre 62,1 % ; peine de mort pour un meurtre au premier degré dans 27,7 % des cas contre 22,8 %.
+  - Ni la taille ni l'alignement ne corrigent le biais : les modèles plus gros ont des stéréotypes cachés plus forts, et l'entraînement par retour humain (GPT-3 contre GPT-3.5) rend les stéréotypes affichés plus positifs sans changer significativement les stéréotypes cachés. Les auteurs en concluent que l'alignement apprend aux modèles à masquer le racisme en surface.
 - Salaire, THWS (Würzburg-Schweinfurt), juillet 2025. Cinq chatbots grand public, des profils identiques sauf le genre, et la question "quel salaire demander ?". L'exemple qui a circulé : 400 000 dollars conseillés à un homme, 280 000 à une femme, pour un poste médical à Denver.
-- Santé, LSE, août 2025. Des outils d'IA utilisés par plus de la moitié des collectivités anglaises résument les dossiers d'aide sociale. Sur 617 dossiers réels où seul le genre change (29 616 paires de résumés), le modèle Gemma de Google emploie plus souvent "handicapé", "incapable" ou "complexe" pour les hommes, et omet ou atténue des besoins équivalents chez les femmes. Llama 3 ne montre pas d'écart : le biais dépend du modèle. Google précise que c'était la première génération de Gemma.
-- Assistants, Université de Limerick, relayé par Euronews en octobre 2026. 189 participants travaillent en réalité virtuelle avec deux avatars, Johan et Johanna, qui utilisent le même modèle (GPT-4). Payés en argent réel, ils donnent environ 10 % de moins à Johanna, tout en affirmant en entretien qu'ils ne feraient aucune différence. Ici ce n'est pas l'IA qui discrimine, ce sont ses utilisateurs ; le titre d'Euronews ("payés") est trompeur, il s'agit d'une somme versée dans une expérience.
+- Santé, LSE, août 2025. Des outils d'IA utilisés par plus de la moitié des collectivités anglaises résument les dossiers d'aide sociale. Sur 617 dossiers réels où seul le genre change (29 616 paires de résumés), le modèle Gemma de Google emploie plus souvent "handicapé", "incapable" ou "complexe" pour les hommes, et omet ou atténue des besoins équivalents chez les femmes.
+- Assistants, Université de Limerick, en octobre 2026. 189 participants travaillent en réalité virtuelle avec deux avatars, Johan et Johanna, qui utilisent le même modèle (GPT-4). Payés en argent réel, ils donnent environ 10 % de moins à Johanna, tout en affirmant en entretien qu'ils ne feraient aucune différence. Ici ce n'est pas l'IA qui discrimine, ce sont ses utilisateurs.
 - Point important : ces modèles n'ont été entraînés ni à recruter, ni à conseiller des salaires, ni à résumer des dossiers sociaux. Ils ont appris sur le web et ressortent ses associations dans des usages pour lesquels ils n'ont pas été conçus.
 
 ### En résumé (5min)

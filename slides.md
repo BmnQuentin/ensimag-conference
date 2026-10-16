@@ -21,7 +21,7 @@ Vous êtes data scientist à la CNAF :
 - 13.8 millions de foyers allocataires
 - ~700 contrôleurs
 
-**Votre mission** : déterminer quels dossiers contrôler pour récupérer le plus d'argent versé à tort
+**Votre mission** : déterminer quels dossiers contrôler pour détecter les fraudes
 
 ---
 
@@ -211,7 +211,7 @@ Manifestations <!-- .element: class="fragment" --> *Fuck the algorithm* -> retra
 
 ---
 
-## 2024 : des modèles de langage trient les CV
+## 2024 : les ATS pour trier les CV (encore une fois)
 
 <!-- .slide: class="img-right" -->
 
