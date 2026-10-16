@@ -283,10 +283,10 @@ Elle en cumule beaucoup !
 
 ### Elise
 
-- Data scientist/analyst dans une PME pendant 2 ans sur des projets d'**optimisation de collectes de déchets** <!-- .element: class="fragment" -->
-- Projet **My City'Challenge** : optimisation du positionnement de bennes de tri sélectif dans une ville <!-- .element: class="fragment" -->
-- Travail sur les **différentes phases du projet** : récolte des données, préparation, stratégie d'analyse, clustering, modèle prédictif, carte de chaleur pour identifier des lieux où déplacer des bennes, expérimentation, rapport <!-- .element: class="fragment" -->
-- **Questionnements par rapport aux limites du modèle** <!-- .element: class="fragment" -->
+- Data scientist/analyst dans une PME pendant 2 ans sur des projets d'optimisation de collectes de déchets <!-- .element: class="fragment" -->
+- Projet My City'Challenge : optimisation du positionnement de bennes de tri sélectif dans une ville <!-- .element: class="fragment" -->
+- Travail sur les différentes phases du projet : récolte des données, préparation, stratégie d'analyse, clustering, modèle prédictif, carte de chaleur pour identifier des lieux où déplacer des bennes, expérimentation, rapport <!-- .element: class="fragment" -->
+- Questionnements par rapport aux limites du modèle <!-- .element: class="fragment" -->
 - On juge la qualité d'un modèle sur le critère qu'on a décidé d'optimiser, mais est-ce toujours le bon critère ? <!-- .element: class="fragment" -->
   
 ---
@@ -340,9 +340,9 @@ Dans un monde idéal, quelle(s) forme(s) de gouvernance mettre en place pour per
 
 ## Quelques initiatives inspirantes
 
-- **ACLU Massachusetts** : Community control over police surveillance <!-- .element: class="fragment" -->
-- **Algorithme d’attribution de greffons de reins** <!-- .element: class="fragment" -->
-- **Māori Algorithmic Sovereignty** : souveraineté algorithmique maorie <!-- .element: class="fragment" -->
+- ACLU Massachusetts : Community control over police surveillance <!-- .element: class="fragment" -->
+- Algorithme d’attribution de greffons de reins <!-- .element: class="fragment" -->
+- Māori Algorithmic Sovereignty : souveraineté algorithmique maorie <!-- .element: class="fragment" -->
 
 
 ---
