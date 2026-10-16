@@ -496,7 +496,7 @@ Améliorer l’analyse des informations récoltées par les citoyen·nes pour mi
 
 ---
 
-## Petit focus Data for Good : quelques exemples de projets
+## Focus Data for Good : quelques exemples de projets
 
 <!-- .slide: class="img-right" -->
 
