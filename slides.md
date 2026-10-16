@@ -474,7 +474,7 @@ Mais surtout en faisant bien votre métier au quotidien <!-- .element: class="fr
 
 ---
 
-## Petit focus Data for Good : quelques exemples de projets
+## Focus Data for Good : quelques exemples de projets
 
 ---
 
